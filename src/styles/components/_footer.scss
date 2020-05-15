@@ -1,0 +1,36 @@
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 1.25rem 0 3rem;
+
+  img {
+    height: 1.25rem;
+    filter: invert(1);
+  }
+}
+
+footer.menu-footer {
+  position: fixed;
+  bottom: 0;
+  left: 7.5%; 
+  height: 10vh;
+
+  img {
+    filter: none;
+  }
+}
+
+#social-media-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0 20px;
+
+  img {
+    display: block;
+    height: 20px;
+  }
+}

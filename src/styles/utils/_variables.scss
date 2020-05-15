@@ -1,0 +1,34 @@
+/*** FONTS ***/
+$base-font: "Roboto", sans-serif;
+
+/*** TEXT SIZES ***/
+$text-huge: 5rem;
+$text-large: 3rem;
+$text-medium: 1.8rem;
+$text-regular: 1rem;
+//32px - component subtitles [showcase, events, etc.]
+//24px - subtitle in the landing
+//18px - subcategories & call-to-action
+
+/*** TEXT WEIGHT ***/
+$bold: 700;
+
+/*** COLORS ***/
+$menu-background: #fff;
+$base-background: #000;
+$secondary-background: #fff;
+$landing-background: #c4c4c4;
+$card-background: #e5e5e5;
+
+$base-text: #fff;
+$menu-text: #151515;
+$secondary-text: #000;
+
+/*** CUBIC BEZIERS ***/
+$ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+
+/*** MEDIA QUERY BREAKPOINTS ***/
+$breakpoint-mobile: 420px;
+$breakpoint-tablet: 750px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-wide: 1440px;

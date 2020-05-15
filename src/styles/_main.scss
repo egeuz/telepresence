@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $base-font;
+  background: $base-background;
+  color: $base-text;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+h1 {
+  // font-size: $text-large;
+}
+
+button {
+  outline: none;
+  color: inherit;
+}
+
+#intro {
+  z-index: 1;
+}

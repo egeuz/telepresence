@@ -1,0 +1,96 @@
+header {
+  padding: 2rem 8vw 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+header.fixed {
+  top: 0;
+  left: 0;
+  // animation: slide-down 0.5s;
+}
+
+@keyframes slide-down {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+/*** MENU BUTTON & BAR ANIMATIONS ***/
+#menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 1.5rem;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 75%;
+    height: 2px;
+    margin-bottom: 6px;
+    background: $base-text;
+    transition: all 0.25s;
+
+    &:nth-child(2) {
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover span {
+    width: 100%;
+  }
+
+  &.close span {
+    background: $menu-text;
+    width: 100%;
+
+    &:first-child {
+      transform-origin: center;
+      // transform: translate(7px) rotateZ(-45deg);
+      transform: translateY(7.5px) rotate(-45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:last-child {
+      // transform: translate(7px 7px) rotateZ(45deg);
+      transform-origin: center;
+      transform: translateY(-7.5px) rotate(45deg);
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  header {
+    width: 10%;
+    max-width: 100px;
+    height: 100vh;
+    padding: 4vh 0;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: calc(50vh - 9px) 18px;
+    border-bottom: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s;
+
+    &:hover {
+      transform: translateX(10px);
+    }
+  } 
+}
