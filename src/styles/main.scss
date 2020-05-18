@@ -1,0 +1,32 @@
+/*** UTILS ***/
+@import './utils/fonts';
+@import "./utils/variables";
+@import "./utils/normalize";
+
+
+/*** DESIGN SYSTEMS ***/
+@import './mixins/typography';
+// @import './mixins/buttons';
+
+/*** BASE STYLES ***/
+@import './base-styles';
+
+/*** LAYOUTS ***/
+
+
+/*** COMPONENT STYLES ***/
+@import './components/header';
+@import './components/mobile-nav';
+@import './components/footer';
+
+//SHOWROOM PAGE
+@import './pages/gallery';
+@import './components/landing';
+@import './components/showcase';
+@import './components/events';
+
+//PROJECT PAGE
+
+//EVENTS PAGE
+
+//ABOUT PAGE

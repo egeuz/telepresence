@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $light;
+}
+
+#test {
+  @include h1;
+}
+
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+
+
+button {
+  outline: none;
+  color: inherit;
+}
+

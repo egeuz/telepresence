@@ -14,16 +14,10 @@ function Footer({ parent }) {
       </a>
       <div id="social-media-logos">
         <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src={FacebookLogo} alt="Facebook social media logo." />
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src={TwitterLogo} alt="Twitter social media logo." />
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
           <img src={InstagramLogo} alt="Instagram social media logo." />
         </a>
         <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src={MediumLogo} alt="Medium social media logo." />
+          <img src={TwitterLogo} alt="Twitter social media logo." />
         </a>
       </div>
     </footer>

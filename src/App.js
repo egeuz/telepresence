@@ -2,13 +2,14 @@ import React, { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 /*** PAGES ***/
-import Showroom from './pages/Showroom'
+import Test from './pages/Test';
+import Gallery from './pages/Gallery'
 import Events from './pages/Events'
 import About from './pages/About'
 
 /*** COMPONENTS ***/
 import Header from './components/Header'
-import Menu from './components/Menu'
+import MobileNav from './components/MobileNav'
 import Footer from './components/Footer'
 
 export const Context = React.createContext()
@@ -38,15 +39,15 @@ function App() {
     <div id="main">
       <Context.Provider value={{ state, dispatch }}>
         <Router>
-          <Menu />
+          <MobileNav />
           <Header />
           <Switch>
-            <Route path="/" exact component={Showroom} />
-            <Route path="/showroom" exact component={Showroom} />
+            <Route path="/" exact component={Test} />
+            <Route path="/gallery" exact component={Gallery} />
             <Route path="/events" exact component={Events} />
             <Route path="/about" exact component={About} />
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </Context.Provider>
     </div>
