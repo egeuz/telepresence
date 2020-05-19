@@ -1,12 +1,12 @@
 /*** UTILS ***/
+@import "./utils/normalize";
 @import './utils/fonts';
 @import "./utils/variables";
-@import "./utils/normalize";
-
 
 /*** DESIGN SYSTEMS ***/
 @import './mixins/typography';
 @import './mixins/buttons';
+@import './mixins/animations';
 
 /*** BASE STYLES ***/
 @import './base-styles';
@@ -19,11 +19,8 @@
 @import './components/mobile-nav';
 @import './components/footer';
 
-//SHOWROOM PAGE
+//GALLERY
 @import './pages/gallery';
-@import './components/landing';
-@import './components/showcase';
-@import './components/events';
 
 //PROJECT PAGE
 

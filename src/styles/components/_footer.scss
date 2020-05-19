@@ -1,36 +1,62 @@
-
 footer {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 1.25rem 50px 3rem;
-
-  img {
-    height: 1.25rem;
-    filter: invert(1);
-  }
-}
-
-footer.menu-footer {
-  position: fixed;
-  bottom: 0;
-  left: 7.5%; 
-  height: 10vh;
-
-  img {
-    filter: none;
-  }
-}
-
-#social-media-logos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0 20px;
+  background: $dark;
+  border-top: 1px solid $light;
+  padding: 4.375rem 0 2.75rem;
 
   img {
     display: block;
-    height: 20px;
+    margin: 2.75rem auto 0;
+    @include hover-blur;
+  }
+
+  #social-media-logos {
+    width: 60vw;
+    margin: 0 auto;
+    @include caption-med($light);
+    display: flex;
+    justify-items: space-between;
+  
+    a {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      @include hover-blur;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  footer {
+    display: flex;
+    padding: 0 5vw;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 3.75rem;
+    
+    & > a, img {
+      margin: 0;
+      align-self: center;
+    }
+
+    #social-media-logos {
+      width: auto;
+      margin: 0;
+      align-self: center;
+
+      a {
+        margin-left: 1.875rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  footer {
+    padding: 0 3.125rem;
   }
 }

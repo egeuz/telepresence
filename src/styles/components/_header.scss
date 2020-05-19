@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  height: 60px;
+  height: 3.75rem;
   padding: 0 5vw;
   background: $dark;
   border-bottom: 1px solid $light;
@@ -9,95 +9,83 @@ header {
 
   #logo {
     @include logo;
-    transition: filter 0.2s;
+    @include hover-blur(4px); 
     align-self: center;
-
-    &:hover {
-      filter: blur(4px);
-    }
   }
 
   p {
     display: none;
     @include ui-inline($secondary);
-    filter: blur(2px);
-    transition: filter 0.2s;
+    @include hover-deblur;
     margin: 0;
     align-self: center;
-
-    &:hover {
-      filter: none;
-    }
   }
 
   nav {
-    @include caption-lg($light);
     align-self: center;
     display: none;
 
     a {
-      margin-left: 30px;
-      transition: all 0.2s;
+      @include caption-lg($light);
+      @include hover-blur;
+      margin-left: 1.875rem;
     }
 
-    a:hover {
-      color: $secondary;
-      filter: blur(2px);
-    }
-
-    a.active {
+    a:hover, a.active {
       color: $secondary;
     }
   }
-}
 
-/*** MENU BUTTON & BAR ANIMATIONS ***/
-#menu-button {
-  background: none;
-  border: none;
-  padding: 0;
-  width: 1.5rem;
-  cursor: pointer;
-
-  span {
-    display: block;
-    width: 75%;
-    height: 2px;
-    margin-bottom: 6px;
-    background: $base-text;
-    transition: all 0.25s;
-
-    &:nth-child(2) {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 1.5rem;
+    cursor: pointer;
+  
+    span {
+      display: block;
+      width: 75%;
+      height: 2px;
+      margin-bottom: 6px;
+      background: $base-text;
+      transition: all 0.25s;
+  
+      &:nth-child(2) {
+        width: 100%;
+      }
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    &:hover span {
       width: 100%;
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &:hover span {
-    width: 100%;
   }
 }
 
 @media (min-width: $breakpoint-tablet) {
-  #menu-button {
-    display: none;
+  header {
+    button {
+      display: none;
+    }
+  
+    nav {
+      display: flex;
+    }
   }
 
-  header nav {
-    display: flex;
-  }
 }
 
 @media (min-width: $breakpoint-desktop) {
   header {
-    padding: 0 50px;
-  }
+    padding: 0 3.125rem;
 
-  header p {
-    display: block;
+    p {
+      display: block;
+    }
   }
 }
 

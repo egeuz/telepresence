@@ -20,7 +20,6 @@ function Header() {
         <Link to="/about">about</Link>
       </nav>
       <button
-        id="menu-button"
         className={state.menuOpen ? "close" : ""}
         onClick={revealMenu}
       >
