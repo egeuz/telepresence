@@ -1,0 +1,102 @@
+/*** TO-DO: ***/
+//border and text animations are not working, fix
+//revisit once site is more implemented to fix layout issues
+
+@mixin base-button {
+  display: block;
+  height: 40px;
+  border-radius: 50px;
+  position: relative;
+
+  //drop shadow
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: inherit;
+    transition: all 0.25s $ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@mixin primary-button {
+  @include base-button; //button base
+  @include h6($light); //typography mixin
+  background: $primary;
+  border: none;
+  padding: 0 1.875rem;
+  
+  &::after {
+    box-shadow: 0px 0px 10px #ff0000;
+  }
+}
+
+@mixin fixed-width-button {
+  @include base-button;
+  @include h6($dark);
+  padding: 0 1.875rem;
+  border: 1px solid $primary;
+
+  &::after {
+    box-shadow: 0px 0px 10px $primary;
+  }
+
+  &:hover {
+    color: $primary;
+    border: 1px solid transparent;
+  }
+}
+
+@mixin button-small {
+  @include base-button;
+  @include h6($dark);
+  height: 30px;
+  padding: 0 1.25rem;
+  border: 1px solid $primary;
+
+  &::after {
+    box-shadow: 0px 0px 10px $primary;
+  }
+
+  &:hover {
+    color: $primary;
+    border: 1px solid transparent;
+  }
+
+  &.selected {
+    background: $primary;
+    color: $light;
+  }
+
+  &.selected:hover::after {
+    opacity: 0;
+  }
+}
+
+@mixin button-med {
+  @include base-button;
+  @include h6($light);
+  min-width: 11.25rem;
+  background: none;
+  border: 1px solid $secondary;
+  
+  &::after {
+    box-shadow: 0px 0px 10px $secondary;
+  }
+
+  &:hover {
+    color: $primary;
+    border: 1px solid transparent;
+  }
+
+
+
+}
