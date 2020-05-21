@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/components/_events.scss';
+import '../styles/pages/_events.scss';
 import backImg from '../assets/IMG_4707.00_04_06_22.Still002.jpg';
 
 function Events() {
