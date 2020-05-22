@@ -1,8 +1,9 @@
 import React, { useReducer } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 /*** PAGES ***/
-import Test from './pages/Test';
+import Test from './pages/Test'
+import ComingSoon from './pages/ComingSoon'
 import Gallery from './pages/Gallery'
 import Events from './pages/Events'
 import About from './pages/About'
@@ -15,23 +16,22 @@ import Footer from './components/Footer'
 export const Context = React.createContext()
 
 const initialState = {
+  headerOpen: true,
   menuOpen: false
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'toggle-header':
+      return { ...state, headerOpen: !state.headerOpen }
     case 'toggle-menu':
       return { ...state, menuOpen: !state.menuOpen }
-    case 'open-menu':
-      return { ...state, menuOpen: true }
-    case 'close-menu':
-      return { ...state, menuOpen: false }
     default:
       return state
   }
 }
 
-function App() {
+function App(props) {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -39,15 +39,15 @@ function App() {
     <div id="main">
       <Context.Provider value={{ state, dispatch }}>
         <Router>
-          <MobileNav />
-          <Header />
+          { state.headerOpen && <MobileNav /> }
+          { state.headerOpen && <Header /> }
           <Switch>
-            <Route path="/" exact component={Test} />
+            <Route path="/" exact component={ComingSoon} />
             <Route path="/gallery" exact component={Gallery} />
             <Route path="/events" exact component={Events} />
             <Route path="/about" exact component={About} />
           </Switch>
-          <Footer />
+          { state.headerOpen && <Footer /> }
         </Router>
       </Context.Provider>
     </div>

@@ -7,7 +7,12 @@ body {
 }
 
 #test {
-  @include button-med;
+  width: 100%;
+  height: 200vh;
+
+  h1 {
+    @include h2;
+  }
 }
 
 

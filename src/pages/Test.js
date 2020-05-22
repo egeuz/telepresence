@@ -1,17 +1,10 @@
-import React, {useState} from 'react'
+import React, {} from 'react'
 
 function Test() {
-
-  const [selected, setSelected] = useState(false);
-
   return (
-    <button 
-      id="test" 
-      className={selected ? "selected" : ""} 
-      onClick={() => { setSelected((p) => !p)}}
-    >
-      PREVIOUS PROJECT
-    </button>
+    <div id="test">
+      <h1>some content</h1>
+    </div>
   )
 }
 
