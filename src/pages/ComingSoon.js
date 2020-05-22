@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Context } from '../App'
 import fetchData from '../data/fetchData'
 
-
-
 function ComingSoon() {
   const { dispatch } = useContext(Context);
   const [content, setContent] = useState("a");

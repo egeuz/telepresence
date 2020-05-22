@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 /*** PAGES ***/
 import Test from './pages/Test'
 import ComingSoon from './pages/ComingSoon'
-import Gallery from './pages/Gallery'
+import Projects from './pages/Projects'
 import Events from './pages/Events'
 import About from './pages/About'
 
@@ -43,7 +43,7 @@ function App(props) {
           { state.headerOpen && <Header /> }
           <Switch>
             <Route path="/" exact component={ComingSoon} />
-            <Route path="/gallery" exact component={Gallery} />
+            <Route path="/projects" exact component={Projects} />
             <Route path="/events" exact component={Events} />
             <Route path="/about" exact component={About} />
           </Switch>
