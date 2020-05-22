@@ -1,35 +1,44 @@
-import React, { useEffect, useContext } from 'react'
-import heroImage from '../assets/coming-soon-hero.png'
+import React, { useState, useEffect, useContext } from 'react'
 import { Context } from '../App'
+import fetchData from '../data/fetchData'
 
 
 
 function ComingSoon() {
   const { dispatch } = useContext(Context);
+  const [content, setContent] = useState("a");
 
   useEffect(() => {
     //toggle header on render
     dispatch({ type: "toggle-header" });
+    //fetch content from CMS
+    fetchData("/coming-soon", setContent);
     //toggle it back on derender
     return () => {
       dispatch({ type: "toggle-header" });
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div id="coming-soon">
-      <h1>TELEPRESENCE</h1>
-      <h3>JUNE 11 — 14</h3>
-      <p>Join us to celebrate our first year MFA Design and Technology virtual show lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-      <div id="social-media-links">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          instagram
+      {
+        content &&
+        <div id="coming-soon-content">
+          <h1>{content.title}</h1>
+          <h3>{content.dates}</h3>
+          <p>{content.tagline}</p>
+          <div id="social-media-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              instagram
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          twitter
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              twitter
         </a>
-        <div id="tagline">A CYBER EXPO</div>
-      </div>
+            <div id="slogan">{content.slogan}</div>
+          </div>
+        </div>
+      }
+
     </div>
   )
 }
