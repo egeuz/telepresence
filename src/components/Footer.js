@@ -1,17 +1,21 @@
 import React from 'react'
 import ParsonsLogo from '../assets/parsons-logo.svg'
 
-function Footer({ parent }) {
+function Footer({ reduced }) {
+  console.log(reduced);
   return (
-    <footer className={parent ? "menu-footer" : ""}>
-      <div id="social-media-logos">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          instagram
+    <footer>
+      {
+        reduced &&
+        <div id="social-media-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            instagram
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          twitter
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            twitter
         </a>
-      </div>
+        </div>
+      }
       <a href="https://www.newschool.edu/parsons/" target="_blank" rel="noopener noreferrer">
         <img src={ParsonsLogo} alt="Parsons School of Design Logo" />
       </a>

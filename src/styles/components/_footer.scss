@@ -10,7 +10,7 @@ footer {
     @include hover-blur;
   }
 
-  #social-media-logos {
+  #social-media-links {
     width: 60vw;
     margin: 0 auto;
     @include caption-med($light);
@@ -43,7 +43,7 @@ footer {
       align-self: center;
     }
 
-    #social-media-logos {
+    #social-media-links {
       width: auto;
       margin: 0;
       align-self: center;

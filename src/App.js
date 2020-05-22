@@ -47,7 +47,7 @@ function App(props) {
             <Route path="/events" exact component={Events} />
             <Route path="/about" exact component={About} />
           </Switch>
-          { state.headerOpen && <Footer /> }
+          <Footer reduced={state.headerOpen} />
         </Router>
       </Context.Provider>
     </div>

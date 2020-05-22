@@ -1,7 +1,57 @@
 #coming-soon {
+  width: 100%;
+  height: calc(100vh - 3.75rem); //height of the footer
+  padding-left: 3rem;
+  padding-top: 12rem;
   background: $dark;
+  background-image: url("../../assets/coming-soon-hero.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+  overflow-y: scroll;
 
-  img {
-    width: 100%;
+  h1 {
+    //adaptations from type system h1
+    margin: 0;
+    font-size: 3rem;
+    text-shadow: none; //remove stroke
+    -webkit-text-stroke: none; //remove stroke
+  }
+
+  h3 {
+    //adaptations from type system h3
+    @include h3($light);
+    &:hover {
+      color: $light; //prevent color change on hover
+    }
+    margin: 1rem 0;
+  }
+
+  p {
+    @include caption-med($light);
+    max-width: 22.5rem;
+  }
+
+  #social-media-links {
+    margin: 3.75rem 0 3rem;
+    a {
+      @include caption-med($light);
+      @include hover-blur;
+      margin-right: 30px;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  #tagline {
+    @include poster($secondary);
+    color: transparent;
+    font-size: 9rem;
+    max-width: 700px;
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
   }
 }

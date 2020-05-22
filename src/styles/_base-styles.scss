@@ -10,9 +10,32 @@ body {
   width: 100%;
   height: 200vh;
 
-  h1 {
-    @include h2;
-  }
+
+}
+
+h1 {
+  margin: 0;
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+h6 {
+  @include h6;
 }
 
 

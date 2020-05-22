@@ -11,13 +11,14 @@
 /*** BASE STYLES ***/
 @import './base-styles';
 
-/*** LAYOUTS ***/
-@import './pages/comingsoon';
-
 /*** COMPONENT STYLES ***/
 @import './components/header';
 @import './components/mobile-nav';
 @import './components/footer';
+
+/*** LAYOUTS ***/
+@import './pages/comingsoon';
+
 
 
 //GALLERY
