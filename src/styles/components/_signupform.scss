@@ -1,0 +1,16 @@
+#signup-form {
+  display: flex;
+
+  .form-field {
+    @include form-item($light);
+    margin-right: 1.875rem;
+
+    &.error .error-message {
+      display: inline-block;
+    }
+  }
+}
+
+#subscribe {
+  @include dark-button;
+}

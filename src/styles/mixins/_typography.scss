@@ -25,11 +25,11 @@
 
   /*** added text stroke ***/
   -webkit-text-stroke: 1px $color;
-  text-shadow:
-  -1px -1px 0 $color,  
-   1px -1px 0 $color,  
-   -1px 1px 0 $color,
-    1px 1px 0 $color;
+  // text-shadow:
+  // -1px -1px 0 $color,  
+  //  1px -1px 0 $color,  
+  //  -1px 1px 0 $color,
+  //   1px 1px 0 $color;
 }
 
 @mixin h2 ($color: $dark) {

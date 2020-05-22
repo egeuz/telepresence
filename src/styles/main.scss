@@ -7,6 +7,7 @@
 @import './mixins/typography';
 @import './mixins/buttons';
 @import './mixins/animations';
+@import './mixins/forms';
 
 /*** BASE STYLES ***/
 @import './base-styles';
@@ -15,6 +16,7 @@
 @import './components/header';
 @import './components/mobile-nav';
 @import './components/footer';
+@import './components/signupform';
 
 /*** LAYOUTS ***/
 @import './pages/comingsoon';

@@ -2,7 +2,6 @@ import React, { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 /*** PAGES ***/
-import Test from './pages/Test'
 import ComingSoon from './pages/ComingSoon'
 import Projects from './pages/Projects'
 import Events from './pages/Events'

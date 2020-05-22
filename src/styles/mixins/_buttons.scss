@@ -27,7 +27,7 @@
   }
 }
 
-@mixin primary-button {
+@mixin large-button {
   @include base-button; //button base
   @include h6($light); //typography mixin
   background: $primary;
@@ -39,7 +39,7 @@
   }
 }
 
-@mixin fixed-width-button {
+@mixin medium-button {
   @include base-button;
   @include h6($dark);
   padding: 0 1.875rem;
@@ -55,7 +55,7 @@
   }
 }
 
-@mixin button-small {
+@mixin small-button {
   @include base-button;
   @include h6($dark);
   height: 30px;
@@ -81,7 +81,7 @@
   }
 }
 
-@mixin button-med {
+@mixin dark-button {
   @include base-button;
   @include h6($light);
   min-width: 11.25rem;
@@ -93,7 +93,8 @@
   }
 
   &:hover {
-    color: $primary;
+    color: $secondary;
     border: 1px solid transparent;
+    box-shadow: 0px 0px 10px $secondary;
   }
 }
