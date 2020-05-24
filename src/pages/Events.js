@@ -2,6 +2,7 @@ import React from 'react'
 import backImg from '../assets/IMG_4707.00_04_06_22.Still002.jpg';
 import EventsDatesButton from '../components/EventsDatesButton';
 import DataSection from '../components/DateSection';
+import EventsCard from '../components/EventsCard';
 
 function Events() {
   return (
@@ -46,7 +47,32 @@ function Events() {
  
      </div> 
      {/* end of buttons */}
-      <div id="dateHolder">
+      <div class="dateHolder">
+      <DataSection />
+      </div>
+
+    <div id="eventsHolder">
+      <div class="verticalCol">
+        <EventsCard />
+        <EventsCard />
+
+      </div>
+      <div class="verticalCol">
+      <EventsCard />
+        <EventsCard />
+
+    </div>
+      <div class="verticalCol">
+      <EventsCard />
+        <EventsCard />
+
+      </div>
+      
+
+    </div>
+
+    {/* another day */}
+    <div class="dateHolder">
       <DataSection />
       </div>
    

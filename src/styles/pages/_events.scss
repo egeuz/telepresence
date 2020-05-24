@@ -1,6 +1,6 @@
 #container{
     width:100vw;
-    height: 200vh;
+    height: auto;
     overflow-x: hidden;
 
 
@@ -59,13 +59,32 @@
         border-bottom: 1px solid black;
     }
 
-    #dateHolder{
-        width:80vw;
+    .dateHolder{
+        width:95vw;
         height:10vh;
-        margin:auto;
+        margin-top:10vh;
+
     }
 
+    #eventsHolder {
+        width:100vw;
+        height:auto;
+        margin-top:15vh;
+    
+    
+    
 
+
+        .verticalCol {
+            width:28vw;
+            height:auto;
+            background-color: aqua;
+            float: left;
+            margin-right: 2.5vw;
+            margin-left:2.5vw;
+            margin-bottom: 5vh;
+        }
+    }
 
 
 
