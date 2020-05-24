@@ -1,66 +1,84 @@
-#backgroundImg{
+#container{
     width:100vw;
-    height:100vh;
-    position: absolute;
-    z-index:1;
-
-}
+    height: 200vh;
+    overflow-x: hidden;
 
 
+    #backgroundImg{
+        width:100%;
+        height:100vh;
+        position: absolute;
+        z-index:1;
+        
+    }
+    
+    
+    
+    .size{
+        width:100%;
+        height:100%;
+        filter: blur(1px) saturate(0);
+    }
+    
+    
+    #textBox{
+        margin-top: -90vh;
+        margin-left: 10vw;
+        width:auto;
+        height:auto;
+    
+        position: relative;
+        z-index: 2;
+    
+    
+    
+        #subTitle{
+          @include h5($color:$light);
+        }
+    
+    
+        #introDate{
+           @include h1($color:$light);
+        }
+        
+        #introText{
+          @include h1($color:$secondary);
+        }
+    }
+    
+    #divider{
+        width: 100vw;
+        height:3vh;
+        padding-top: 103vh;
+    
+    }
 
-.size{
-    width:100%;
-    height:100%;
-    filter: blur(5px) saturate(0);
-}
+    #buttonsHolder{
+        width:100vw;
+        height:8vh;
+        border-bottom: 1px solid black;
+    }
 
-
-#textBox{
-    margin-top: -90vh;
-    margin-left: 10vw;
-    width:auto;
-    height:auto;
-
-    position: relative;
-    z-index: 3;
-
-
-
-    #subTitle{
-      @include h1;
+    #dateHolder{
+        width:80vw;
+        height:10vh;
+        margin:auto;
     }
 
 
-    #introDate{
-        font-family: 'GlyphWorld', sans-serif;
-        font-size: 5rem;
-        letter-spacing: 0.05em;
-    
-      
-        /*** added text stroke ***/
-        -webkit-text-stroke: 1px white;
-        text-shadow:
-        -1px -1px 0 white,  
-         1px -1px 0 white,  
-         -1px 1px 0 white,
-          1px 1px 0 white;
-    }
-    
-    #introText{
-        font-family: 'GlyphWorld', sans-serif;
-        font-size: 5rem;
-        letter-spacing: 0.05em;
-    
-      
-        /*** added text stroke ***/
-        -webkit-text-stroke: 1px white;
-        text-shadow:
-        -1px -1px 0 white,  
-         1px -1px 0 white,  
-         -1px 1px 0 white,
-          1px 1px 0 white;
-    }
+
+
+
+
+
+
+
+
+
+
+
 }
+
 
 
 

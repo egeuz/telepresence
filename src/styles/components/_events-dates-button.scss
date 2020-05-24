@@ -1,0 +1,17 @@
+.EventsDatesButton {
+
+    width:10vw;
+    height:5vh;
+    float: right;
+    margin-right: 2vw;
+    border-radius: 2rem;
+    background:$primary;
+
+
+    #date{
+        @include h6;
+        text-align: center;
+        color:$light;
+      
+    }
+}
