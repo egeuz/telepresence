@@ -4,14 +4,14 @@ header {
   padding: 0 5vw;
   background: $dark;
   border-bottom: 1px solid $light;
-  display: flex; 
+  display: flex;
   position: fixed;
   top: 0;
   justify-content: space-between;
 
   #logo {
     @include logo;
-    @include hover-blur(4px); 
+    @include hover-blur(4px);
     align-self: center;
   }
 
@@ -33,7 +33,8 @@ header {
       margin-left: 1.875rem;
     }
 
-    a:hover, a.active {
+    a:hover,
+    a.active {
       color: $secondary;
     }
   }
@@ -44,26 +45,10 @@ header {
     padding: 0;
     width: 1.5rem;
     cursor: pointer;
-  
-    span {
-      display: block;
-      width: 75%;
-      height: 2px;
-      margin-bottom: 6px;
-      background: $base-text;
-      transition: all 0.25s;
-  
-      &:nth-child(2) {
-        width: 100%;
-      }
-  
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  
-    &:hover span {
-      width: 100%;
+
+    &:hover img {
+      filter: $black-filter $secondary-filter;
+      //no need for transition because this is the mobile menu button
     }
   }
 }
@@ -73,12 +58,11 @@ header {
     button {
       display: none;
     }
-  
+
     nav {
       display: flex;
     }
   }
-
 }
 
 @media (min-width: $breakpoint-desktop) {
@@ -90,27 +74,3 @@ header {
     }
   }
 }
-
-/**** FULLSCREEN MENU VERSION ***/
-/**** may gut later for repsonsive headers ***/
-// header {
-//   width: 100%;
-//   z-index: 2;
-// }
-
-// header.fixed {
-//   top: 0;
-//   left: 0;
-//   // animation: slide-down 0.5s;
-// }
-
-// @keyframes slide-down {
-//   0% {
-//     top: -100px;
-//   }
-
-//   100% {
-//     top: 0;
-//   }
-// }
-

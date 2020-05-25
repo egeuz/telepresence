@@ -1,6 +1,8 @@
 @mixin form-item($color: $dark) {
   input {
     outline: none;
+    padding-left: 0;
+    margin-left: -2px;
     @include excerpt($color);
     background: none;
     border: none;

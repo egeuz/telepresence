@@ -1,0 +1,165 @@
+#coming-soon {
+  width: 100%;
+  height: calc(100vh);
+  padding: 3rem 2rem 2rem;
+  background-color: $dark;
+  background-image: url("../../assets/coming-soon-hero-cropped.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: bottom -20px right -20vw;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+
+  h1 {
+    @include h3($secondary);
+    -webkit-text-stroke: none;
+  }
+
+  h3 {
+    @include h5($light);
+  }
+
+  p {
+    @include caption-sm($light);
+    max-width: 17.5rem;
+  }
+
+  #social-media-links {
+    margin: 3.75rem 0 3rem;
+    a {
+      @include caption-med($light);
+      @include hover-blur;
+      margin-right: 30px;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  #slogan {
+    @include poster($secondary);
+    @include h1;
+    color: transparent;
+    justify-self: end;
+    align-self: end;
+    max-width: 500px;
+  }
+
+  #parsons-logo {
+    @include hover-blur;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  #coming-soon {
+    background-size: 800px;
+    background-position: bottom right;
+
+
+    h1 {
+      @include h1($secondary);
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: none; //remove stroke
+      -webkit-text-stroke: 0px; //remove stroke
+    }
+
+    h3 {
+      @include h3($light);
+      &:hover {
+        color: $light; //prevent color change on hover
+      }
+      margin: 1rem 0;
+    }
+
+    p {
+      @include caption-med($light);
+      max-width: 22.5rem;
+    }
+
+    #slogan {
+      @include poster($secondary);
+      color: transparent;
+      max-width: 700px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  #coming-soon {
+    padding-left: 3rem;
+    padding-top: 10rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  #slogan {
+    font-size: 9rem;
+  }
+}
+
+// #coming-soon {
+//   width: 100%;
+//   height: calc(100vh);
+//   padding-left: 3rem;
+//   padding-top: 12rem;
+//   background: $dark;
+//   background-image: url("../../assets/coming-soon-hero.png");
+//   background-repeat: no-repeat;
+//   background-position: right;
+//   position: relative;
+//   overflow-y: scroll;
+
+//   h1 {
+//     //adaptations from type system h1
+//     margin: 0;
+//     font-size: 3rem;
+//     text-shadow: none; //remove stroke
+//     -webkit-text-stroke: 0px; //remove stroke
+//   }
+
+//   h3 {
+//     //adaptations from type system h3
+//     @include h3($light);
+//     &:hover {
+//       color: $light; //prevent color change on hover
+//     }
+//     margin: 1rem 0;
+//   }
+
+//   p {
+//     @include caption-med($light);
+//     max-width: 22.5rem;
+//   }
+
+//   #social-media-links {
+//     margin: 3.75rem 0 3rem;
+//     a {
+//       @include caption-med($light);
+//       @include hover-blur;
+//       margin-right: 30px;
+
+//       &:hover {
+//         color: $secondary;
+//       }
+//     }
+//   }
+
+//   #slogan {
+//     @include poster($secondary);
+//     color: transparent;
+//     font-size: 9rem;
+//     max-width: 700px;
+//     position: absolute;
+//     right: 0;
+//     bottom: 2rem;
+//   }
+// }
+
+@media (min-width: $breakpoint-tablet) {
+}
+
+@media (min-width: $breakpoint-desktop) {
+}

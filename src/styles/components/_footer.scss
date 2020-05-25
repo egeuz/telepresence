@@ -4,7 +4,7 @@ footer {
   border-top: 1px solid $light;
   padding: 4.375rem 0 2.75rem;
 
-  img {
+  #parsons-logo {
     display: block;
     margin: 2.75rem auto 0;
     @include hover-blur;
@@ -38,7 +38,7 @@ footer {
     justify-content: space-between;
     height: 3.75rem;
     
-    & > a, img {
+    & > a, #parsons-logo {
       margin: 0;
       align-self: center;
     }

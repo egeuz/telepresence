@@ -14,6 +14,8 @@ import Footer from './components/Footer'
 
 export const Context = React.createContext()
 
+
+
 const initialState = {
   headerOpen: true,
   menuOpen: false
@@ -38,15 +40,15 @@ function App(props) {
     <div id="main">
       <Context.Provider value={{ state, dispatch }}>
         <Router>
-          { state.headerOpen && <MobileNav /> }
-          { state.headerOpen && <Header /> }
+          {state.headerOpen && <MobileNav />}
+          {state.headerOpen && <Header />}
           <Switch>
             <Route path="/" exact component={ComingSoon} />
             <Route path="/projects" exact component={Projects} />
             <Route path="/events" exact component={Events} />
             <Route path="/about" exact component={About} />
           </Switch>
-          <Footer reduced={state.headerOpen} />
+          {state.headerOpen && <Footer />}
         </Router>
       </Context.Provider>
     </div>

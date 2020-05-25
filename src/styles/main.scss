@@ -16,11 +16,11 @@
 @import './components/header';
 @import './components/mobile-nav';
 @import './components/footer';
-@import './components/signupform';
+@import './components/signup-form';
 
 /*** LAYOUTS ***/
-@import './pages/comingsoon';
-
+@import './pages/coming-soon';
+@import './pages/about';
 
 
 //GALLERY
@@ -31,3 +31,7 @@
 //EVENTS PAGE
 
 //ABOUT PAGE
+
+.red {
+  background: red;
+}

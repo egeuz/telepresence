@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Context } from '../App'
 import fetchData from '../data/fetchData'
 import SignupForm from '../components/SignupForm'
+import ParsonsLogo from '../assets/parsons-logo.svg'
 
 function ComingSoon() {
   const { dispatch } = useContext(Context);
@@ -20,20 +21,22 @@ function ComingSoon() {
 
   return (
     <div id="coming-soon">
-      {
-        content &&
-        <div id="coming-soon-content">
-          <h1>{content.title}</h1>
-          <h3>{content.dates}</h3>
-          <p>{content.tagline}</p>
-          <div id="social-media-links">
-            <a href="#" target="_blank" rel="noopener noreferrer"> instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"> twitter </a>
-          </div>
-          <SignupForm />
-          <div id="slogan">{content.slogan}</div>
-        </div>
-      }
+      <div>
+        <h1>{content && content.title}</h1>
+        <h3>{content && content.dates}</h3>
+        <p>{content && content.tagline}</p>
+      </div>
+      <div id="social-media-links">
+        <a href="#" target="_blank" rel="noopener noreferrer"> instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer"> twitter </a>
+      </div>
+      <SignupForm />
+      <div id="slogan">
+        {content && content.slogan}
+      </div>
+      <a href="https://www.newschool.edu/parsons/" target="_blank" rel="noopener noreferrer">
+        <img src={ParsonsLogo} alt="Parsons School of Design Logo" id="parsons-logo" />
+      </a>
     </div>
   )
 }

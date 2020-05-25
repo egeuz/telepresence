@@ -1,30 +1,82 @@
-import React, { useState } from 'react'
+import React from "react";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+
+const Form = ({ status, message, onValidated }) => {
+  let email, firstName, lastName, type;
+  const submit = () => {
+    return email &&
+      firstName &&
+      lastName &&
+      email.value.indexOf("@") > -1 &&
+      onValidated({
+        EMAIL: email.value,
+        FNAME: firstName.value,
+        LNAME: lastName.value,
+        TYPE: type.value
+      });
+  }
+
+
+  return (
+    <div id="signup-form">
+      <div className="form-field">
+        <input
+          ref={node => (firstName = node)}
+          type="text"
+          placeholder="Your first name"
+          id="first-name"
+        />
+        <label htmlFor="first-name">First name</label>
+      </div>
+      <div className="form-field">
+        <input
+          ref={node => (lastName = node)}
+          type="text"
+          placeholder="Your last name"
+          id="last-name"
+        />
+        <label htmlFor="first-name">Last name</label>
+      </div>
+      <div className="form-field">
+        <input
+          ref={node => (email = node)}
+          type="email"
+          placeholder="Your email"
+          id="email"
+        />
+        <label htmlFor="first-name">Email</label>
+      </div>
+      <input
+        ref={node => (type = node)}
+        type="hidden"
+        value="Keep Me Posted"
+      />
+      <button id="submit" onClick={submit}>GET IN TOUCH</button>
+      <div id="message">
+        {status === "sending" && <p>Sending...</p>}
+        {status === "error" && <p className="error" dangerouslySetInnerHTML={{ __html: message }} />}
+        {status === "success" && <p className="success" dangerouslySetInnerHTML={{ __html: message }} />}
+      </div>
+    </div>
+  );
+};
 
 function SignupForm() {
-  return (
-    <form 
-      id="signup-form"
-      action="https://newschool.us18.list-manage.com/subscribe/post"
-      method="POST"
-      noValidate
-    >
-      <input type="hidden" name="u" value="d811e057da3fb50be50c3bece" />
-      <input type="hidden" name="id" value="59a4d2542d" />
+  const url = process.env.REACT_APP_MAILCHIMP_MAILING_LIST_URL;
 
-      <div className="form-field">
-        <input type="text" name="first-name" id="first-name" placeholder="First name here" />
-        <label htmlFor="first-name">First Name</label>
-      </div>
-      <div className="form-field">
-        <input type="text" name="last-name" id="last-name" placeholder="Last name here" />
-        <label htmlFor="last-name">Last Name</label>
-      </div>
-      <div className="form-field">
-        <input type="email" name="email" id="email" placeholder="Your e-mail" />
-        <label htmlFor="email">Email</label>
-      </div>
-      <input type="submit" value="GET IN TOUCH" id="subscribe" name="subscribe" />
-    </form>
+  return (
+    <div>
+      <MailchimpSubscribe
+        url={url}
+        render={({ subscribe, status, message }) => (
+          <Form
+            status={status}
+            message={message}
+            onValidated={formData => subscribe(formData)}
+          />
+        )}
+      />
+    </div>
   )
 }
 

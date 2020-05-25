@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../App'
+import hamburgerMenu from '../assets/icons/hamburger-menu.svg'
 
 function Header() {
   const { state, dispatch } = useContext(Context);
+
 
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [scrollDirection, setScrollDirection] = useState("down");
@@ -45,7 +47,7 @@ function Header() {
         className={state.menuOpen ? "close" : ""}
         onClick={revealMenu}
       >
-        <span /><span /><span />
+        <img src={hamburgerMenu} alt="Click here to open the menu!"/>
       </button>
     </header>
   )

@@ -1,0 +1,12 @@
+#about {
+
+
+  p {
+    @include poster($secondary);
+    text-align: left;
+  }
+
+  #left-column {
+    display: none;
+  }
+}
