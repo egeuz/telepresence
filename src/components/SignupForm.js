@@ -4,16 +4,21 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 const Form = ({ status, message, onValidated }) => {
   let email, firstName, lastName, type;
   const submit = () => {
+    const EMAIL = email.value;
+    const FNAME = firstName.value;
+    const LNAME = lastName.value;
+    const TYPE = type.value;
+
+    email.value = "";
+    firstName.value = "";
+    lastName.value = "";
+    type.value = "";
+
     return email &&
       firstName &&
       lastName &&
       email.value.indexOf("@") > -1 &&
-      onValidated({
-        EMAIL: email.value,
-        FNAME: firstName.value,
-        LNAME: lastName.value,
-        TYPE: type.value
-      });
+      onValidated({ EMAIL, FNAME, LNAME, TYPE });
   }
 
 

@@ -10,6 +10,10 @@
   display: grid;
   grid-template-rows: auto auto auto 1fr auto;
 
+  & > *:not(#video-background) {
+    z-index: 1;
+  }
+
   h1 {
     @include h3($secondary);
     -webkit-text-stroke: none;
@@ -48,7 +52,7 @@
 
   #parsons-logo {
     @include hover-blur;
-    margin-top: 20px;
+    margin: 20px 0;
   }
 }
 
