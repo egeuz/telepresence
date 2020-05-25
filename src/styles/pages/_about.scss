@@ -1,4 +1,5 @@
 #about-hero {
+    background-color: $dark;
     height: calc(100vh - 3.75rem);
     width: 100%;
     background-image: url('../../assets/about-hero.png');
@@ -6,7 +7,17 @@
     background-position: center;
     background-size: cover;
   
-    & #content-wrapper{
+    #poster {
+      @include poster($secondary);
+      color: transparent;
+      text-align: left;
+    }
+
+    h5 {
+      color: $light;
+    }
+
+    #content-wrapper{
         padding: 30vh 0 30vh 10vw;
     }
   }
