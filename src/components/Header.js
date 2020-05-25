@@ -6,9 +6,8 @@ import hamburgerMenu from '../assets/icons/hamburger-menu.svg'
 function Header() {
   const { state, dispatch } = useContext(Context);
 
-
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
-  const [scrollDirection, setScrollDirection] = useState("down");
+  const [scrollDirection, setScrollDirection] = useState("up");
 
   const handleScroll = () => {
     setScrollPosition(prevPosition => {
@@ -24,10 +23,9 @@ function Header() {
 
     window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("scroll", handleScroll )
     }
   }, []);
-  console.log(scrollDirection);
 
   const revealMenu = () => {
     dispatch({ type: "toggle-menu" });
@@ -35,7 +33,7 @@ function Header() {
 
   const visitorCount = 52;
   return (
-    <header>
+    <header className={(scrollDirection === "down" && scrollPosition > window.innerHeight / 4) ? "hidden" : ""}>
       <Link to="/" id="logo">TELEPRESENCE</Link>
       <p>[there are {visitorCount} people here with you]</p>
       <nav>

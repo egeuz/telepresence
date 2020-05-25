@@ -8,6 +8,11 @@ header {
   position: fixed;
   top: 0;
   justify-content: space-between;
+  transition: transform 0.4s;
+
+  &.hidden {
+    transform: translateY(-100px);
+  }
 
   #logo {
     @include logo;
