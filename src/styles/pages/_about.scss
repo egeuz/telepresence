@@ -1,12 +1,12 @@
-#about {
-
-
-  p {
-    @include poster($secondary);
-    text-align: left;
+#about-hero {
+    height: calc(100vh - 3.75rem);
+    width: 100%;
+    background-image: url('../../assets/about-hero.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+    & #content-wrapper{
+        padding: 30vh 0 30vh 10vw;
+    }
   }
-
-  #left-column {
-    display: none;
-  }
-}

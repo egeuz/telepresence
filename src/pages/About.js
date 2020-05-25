@@ -1,10 +1,5 @@
-import React, {useState, useEffect} from 'react'
-
-//about landing
-//blob background — CSS
-//cool text changing effect
-
-const words = ["CREATIVE TECHNOLOGISTS", "SOMETHING ELSE"]
+import React from 'react'
+import hero from '../assets/about-hero.png'
 
 function About() {
 
@@ -26,15 +21,11 @@ function About() {
   }, []);
 
   return (
-    <div id="about">
-      <div id="about-landing">
-        <h5>WE ARE</h5>
-        <p>{words[1]}</p>
+    <div id = "about-hero">
+      <div id = "content-wrapper">
+        <h5>We are</h5>
+        <h1>Creative Technologists</h1>
       </div>
-      <div id="about-content">
-        <div id="left-column"></div>
-        <div id="right-column"></div>
-      </div>  
     </div>
   )
 
