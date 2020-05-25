@@ -42,7 +42,8 @@ function App(props) {
           {state.headerOpen && <MobileNav />}
           {state.headerOpen && <Header />}
           <Switch>
-            <Route path="/" exact component={Test} />
+            <Route path="/" exact component={ComingSoon} />
+            <Route path="/test" exact component={Test} />
             <Route path="/projects" exact component={Projects} />
             <Route path="/events" exact component={Events} />
             <Route path="/about" exact component={About} />
