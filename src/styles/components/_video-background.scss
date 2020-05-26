@@ -11,8 +11,14 @@
 
 #video-container {
   height: 100%;
-  text-align: right;
 
+  &.right {
+    text-align: right;
+  }
+
+  &.center {
+    text-align: center;
+  }
   video {
     height: 100%;
   }

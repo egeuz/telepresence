@@ -5,8 +5,8 @@ import fetchData from '../data/fetchData'
 import VideoBackground from '../components/VideoBackground'
 import SignupForm from '../components/SignupForm'
 /* assets */
-import ParsonsLogo from '../assets/parsons-logo.svg'
-import Blob from '../assets/blobs/1080blob.mp4'
+import parsonsLogo from '../assets/parsons-logo.svg'
+import blob from '../assets/blobs/1080blob.mp4'
 
 function ComingSoon() {
   const { dispatch } = useContext(Context);
@@ -25,7 +25,7 @@ function ComingSoon() {
 
   return (
     <div id="coming-soon">
-      <VideoBackground url={Blob} />
+      <VideoBackground url={blob} position="right" />
       <div>
         <h1>{content && content.title}</h1>
         <h3>{content && content.dates}</h3>
@@ -40,7 +40,7 @@ function ComingSoon() {
         {content && content.slogan}
       </div>
       <a href="https://www.newschool.edu/parsons/" target="_blank" rel="noopener noreferrer">
-        <img src={ParsonsLogo} alt="Parsons School of Design Logo" id="parsons-logo" />
+        <img src={parsonsLogo} alt="Parsons School of Design Logo" id="parsons-logo" />
       </a>
     </div>
   )

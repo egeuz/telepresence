@@ -9,6 +9,7 @@ header {
   top: 0;
   justify-content: space-between;
   transition: transform 0.4s;
+  z-index: 2;
 
   &.hidden {
     transform: translateY(-100px);

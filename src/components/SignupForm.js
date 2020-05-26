@@ -9,10 +9,10 @@ const Form = ({ status, message, onValidated }) => {
     const LNAME = lastName.value;
     const TYPE = type.value;
 
-    email.value = "";
-    firstName.value = "";
-    lastName.value = "";
-    type.value = "";
+    // email.value = "";
+    // firstName.value = "";
+    // lastName.value = "";
+    // type.value = "";
 
     return email &&
       firstName &&
