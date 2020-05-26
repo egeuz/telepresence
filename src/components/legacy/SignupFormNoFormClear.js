@@ -1,26 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const Form = ({ status, message, onValidated }) => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const type = "Keep Me Posted"
-
+  let email, firstName, lastName, type;
   const submit = () => {
-    const EMAIL = email;
-    const FNAME = firstName;
-    const LNAME = lastName;
+    const EMAIL = email.value;
+    const FNAME = firstName.value;
+    const LNAME = lastName.value;
+    const TYPE = type.value;
 
-    setEmail("");
-    setFirstName("");
-    setLastName("");
+    // email.value = "";
+    // firstName.value = "";
+    // lastName.value = "";
+    // type.value = "";
 
     return email &&
       firstName &&
       lastName &&
-      email.indexOf("@") > -1 &&
-      onValidated({ EMAIL, FNAME, LNAME, TYPE: type });
+      email.value.indexOf("@") > -1 &&
+      onValidated({ EMAIL, FNAME, LNAME, TYPE });
   }
 
 
@@ -28,8 +26,7 @@ const Form = ({ status, message, onValidated }) => {
     <div id="signup-form">
       <div className="form-field">
         <input
-          value={firstName}
-          onChange={(e) => { setFirstName(e.target.value) }}
+          ref={node => (firstName = node)}
           type="text"
           placeholder="Your first name"
           id="first-name"
@@ -38,8 +35,7 @@ const Form = ({ status, message, onValidated }) => {
       </div>
       <div className="form-field">
         <input
-          value={lastName}
-          onChange={(e) => { setLastName(e.target.value) }}
+          ref={node => (lastName = node)}
           type="text"
           placeholder="Your last name"
           id="last-name"
@@ -48,8 +44,7 @@ const Form = ({ status, message, onValidated }) => {
       </div>
       <div className="form-field">
         <input
-          value={email}
-          onChange={(e) => { setEmail(e.target.value) }}
+          ref={node => (email = node)}
           type="email"
           placeholder="Your email"
           id="email"
@@ -57,8 +52,9 @@ const Form = ({ status, message, onValidated }) => {
         <label htmlFor="first-name">Email</label>
       </div>
       <input
+        ref={node => (type = node)}
         type="hidden"
-        value={type}
+        value="Keep Me Posted"
       />
       <button id="submit" onClick={submit}>GET IN TOUCH</button>
       <div id="message">
