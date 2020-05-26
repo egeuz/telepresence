@@ -1,0 +1,37 @@
+.Modal{
+    position:absolute;
+    width:70vw;
+    height:70vh;
+    background-color:$light;
+    margin:auto;
+    z-index:10;
+
+}
+
+.container{
+    /* background-color:wheat; */
+   width:90%;
+   height:90%;
+   background-color: rgba(0,0,0,0.5);
+
+}
+
+
+.container span{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #ab3f3f;;
+    font-style: oblique;
+    font-size:1.3rem !important;
+    font-weight:900;
+    text-align:left;
+    line-height: 150%;
+}
+
+#close {
+    position: absolute;
+    right:10vw;
+    top:15vh;
+    cursor: pointer;
+
+}

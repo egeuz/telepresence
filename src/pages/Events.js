@@ -1,90 +1,106 @@
-import React from 'react'
+import React, { Component } from 'react'
 import backImg from '../assets/IMG_4707.00_04_06_22.Still002.jpg';
 import EventsDatesButton from '../components/EventsDatesButton';
 import DataSection from '../components/DateSection';
 import EventsCard from '../components/EventsCard';
-
-function Events() {
-  return (
-  
-    <div id="container">
-      
-    <div id="backgroundImg">
-      {/* background Image */}
-      <img src={backImg} className="size"/>
-
-      {/* Text Container */}
-      <div id="textBox">
-      {/* sub title */}
-      <p id="subTitle">
-      join us for a 4-day cyber expo
-      </p>
-      {/* introduction text */}
-      <p id="introDate">
-      june 11–14
-      <p id="introText">
-      a program of artist talks, workshops, and demos
-      </p>
+import PopUpModal from '../components/PopUpModal';
 
 
-      </p>
-
-      </div>
-  
-    </div>
-    {/* end of landing section */}
-
+function Events () {
    
-  <div id="divider">
-    <div id="buttonsHolder">
+    // state = {
+    //   show:false,
+    // }
+    // showModal = ()=>{
+    //   this.setState({
+    //     // show:true
+    //     show:!this.state.show
+    //   });
+    // }
+  
 
-    <EventsDatesButton  />
-      <EventsDatesButton  />
-      <EventsDatesButton  />
-      <EventsDatesButton  />
-     
-    </div>
+  
  
-     </div> 
-     {/* end of buttons */}
+  // render(){
+    return (
+  
+      <div id="container">
+        
+      <div id="backgroundImg">
+        {/* background Image */}
+        <img src={backImg} className="size"/>
+  
+        {/* Text Container */}
+        <div id="textBox">
+        {/* sub title */}
+        <p id="subTitle">
+        join us for a 4-day cyber expo
+        </p>
+        {/* introduction text */}
+        <p id="introDate">
+        june 11–14
+        <p id="introText">
+        a program of artist talks, workshops, and demos
+        </p>
+  
+  
+        </p>
+  
+        </div>
+    
+      </div>
+      {/* end of landing section */}
+  
+     
+    <div id="divider">
+      <div id="buttonsHolder">
+  
+      <EventsDatesButton  />
+        <EventsDatesButton  />
+        <EventsDatesButton  />
+        <EventsDatesButton  />
+       
+      </div>
+   
+       </div> 
+       {/* end of buttons */}
+        <div class="dateHolder">
+        <DataSection />
+        </div>
+  
+      <div id="eventsHolder">
+        <div class="verticalCol">
+          <EventsCard />
+          <EventsCard />
+  
+        </div>
+        <div class="verticalCol">
+        <EventsCard />
+          <EventsCard />
+  
+      </div>
+        <div class="verticalCol">
+        <EventsCard />
+          <EventsCard />
+  
+        </div>
+        
+  
+      </div>
+  
+      {/* another day */}
       <div class="dateHolder">
-      <DataSection />
-      </div>
-
-    <div id="eventsHolder">
-      <div class="verticalCol">
-        <EventsCard />
-        <EventsCard />
-
-      </div>
-      <div class="verticalCol">
-      <EventsCard />
-        <EventsCard />
-
-    </div>
-      <div class="verticalCol">
-      <EventsCard />
-        <EventsCard />
-
-      </div>
-      
-
-    </div>
-
-    {/* another day */}
-    <div class="dateHolder">
-      <DataSection />
-      </div>
-   
+        <DataSection />
+        </div>
+     
+    
   
-
-    </div>
-   
-
-   
-  )
-
+      </div>
+     
   
-}
+     
+    );
+  }
+// }
 
 export default Events

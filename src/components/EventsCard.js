@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{Component} from 'react';
 import EventsDatesButton from '../components/EventsDatesButton';
 import backImg from '../assets/IMG_4707.00_04_06_22.Still002.jpg';
+import PopUpModal from '../components/PopUpModal';
 
 function EventsCard() {
+
   return (
     <div className="EventsCard">
       <h4 id="type">Workshop</h4>
@@ -24,7 +26,8 @@ function EventsCard() {
           </div>
   
         <p id="date">May 28 12-1PM</p> 
-        <p id="moreInfo">More Info</p>
+        <p id="moreInfo" onClick={()=>{this.showModal();}}>More Info</p>
+        {/* <PopUpModal closeModal={this.showModal} show = {this.state.show}></PopUpModal> */}
     </div>
 
       </div>
