@@ -43,33 +43,6 @@ function App(props) {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // const [position, setScrollPosition] = useState(window.scrollY);
-  // const [direction, setScrollDirection] = useState("up");
-
-  // const handleScroll = () => {
-  //   setScrollPosition(prevPosition => {
-  //     const position = window.scrollY
-  //     const direction = (prevPosition > position) ? "up" :
-  //       (prevPosition < position) ? "down" : prevPosition
-  //     setScrollDirection(direction) //set the scroll direction
-  //     return window.scrollY; //set the scroll position
-  //   });
-
-  //   dispatch({ type: 'set-scroll-position', position })
-  //   dispatch({ type: 'set-scroll-direction', direction })
-  // }
-
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll)
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll)
-  //   }
-  // }, [])
-
-
-  // console.log(state.scrollPosition);
-
   return (
     <div id="main">
       <Context.Provider value={{ state, dispatch }}>

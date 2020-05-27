@@ -7,7 +7,8 @@ function About() {
       <div id="about-hero">
         <h5>WE ARE</h5>
         <p>CREATIVE TECHNOLOGISTS</p>
-        </div>
+      </div>
+      
       <div id="about-content">
         <div id="left-col">
         </div>
