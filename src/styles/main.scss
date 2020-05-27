@@ -17,12 +17,13 @@
 @import './components/mobile-nav';
 @import './components/footer';
 @import './components/signup-form';
+@import './components/subheader';
 @import './components/video-background';
 
 /*** LAYOUTS ***/
 @import './pages/coming-soon';
 @import './pages/about';
-
+@import './pages/events';
 
 //GALLERY
 @import './pages/projects';

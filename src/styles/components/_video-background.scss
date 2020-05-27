@@ -5,7 +5,6 @@
   top: 0;
   left: 0;
   background: $dark;
-  z-index: 0;
   overflow-x: hidden;
 }
 
@@ -21,5 +20,6 @@
   }
   video {
     height: 100%;
+    // transform: scale(1.5); //maybe a good idea to blow it up a little bit?
   }
 }

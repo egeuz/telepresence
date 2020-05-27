@@ -1,6 +1,7 @@
 import React from 'react'
+/* components */
 import VideoBackground from '../components/VideoBackground'
-
+import Subheader from '../components/Subheader'
 /* assets */
 import blob from '../assets/blobs/1080blob.mp4'
 import logotype from '../assets/logotype.svg'
@@ -12,11 +13,11 @@ function Projects() {
     <div id="projects">
       <div id="projects-hero">
         <div id="canvas">
-          <div id="hands">
-            <img src={leftHand} className="left-hand" alt="A spooky spectral left hand!"/>
-            <img src={rightHand} className="right-hand" alt="A terrible ghastly right hand!"/>
-          </div>
           <VideoBackground url={blob} position="center" />
+          <div id="hands">
+            <img src={leftHand} className="left-hand" alt="A spooky spectral left hand!" />
+            <img src={rightHand} className="right-hand" alt="A terrible ghastly right hand!" />
+          </div>
         </div>
         <div id="content">
           <div id="tagline">
@@ -27,7 +28,9 @@ function Projects() {
           <img id="logotype" src={logotype} alt="Telepresence logo" />
         </div>
       </div>
-      <div id="projects-showcase"></div>
+      <div id="projects-showcase">
+        <Subheader page={"projects"} />
+      </div>
     </div>
   )
 }

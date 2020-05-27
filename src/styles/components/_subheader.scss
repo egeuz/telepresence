@@ -1,0 +1,21 @@
+#subheader {
+  background: $light;
+  height: 3.75rem;
+  z-index: 2;
+  transition: transform 0.24s;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &.fixed.offset {
+    transform: translateY(60px);
+  }
+
+  &.hidden {
+    transform: translateY(-100px);
+  }
+}

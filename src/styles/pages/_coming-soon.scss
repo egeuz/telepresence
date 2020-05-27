@@ -25,7 +25,7 @@
 
   p {
     @include caption-sm($light);
-    max-width: 17.5rem;
+    max-width: 22.5rem;
   }
 
   #social-media-links {
@@ -81,7 +81,7 @@
 
     p {
       @include caption-med($light);
-      max-width: 22.5rem;
+      max-width: 27.5rem;
     }
 
     #slogan {
