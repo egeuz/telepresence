@@ -5,8 +5,10 @@ function About() {
   return (
     <div id="about">
       <div id="about-hero">
-        <h5>WE ARE</h5>
-        <p>CREATIVE TECHNOLOGISTS</p>
+        <div id="about-hero-content">
+          <h5>WE ARE</h5>
+          <p>CREATIVE TECHNOLOGISTS</p>
+        </div>
         </div>
       <div id="about-content">
         <div id="left-col">
@@ -24,10 +26,23 @@ function About() {
           <div id="section-3">
             <h3>CONTRIBUTORS</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div id="contributors-names">
+              <div id="name-col-left">
+                <p>Mary Ann Badavi<br/>Morgane Borzee<br/>Pranjal Deep<br/>Peilu Fan<br/>Livia Foldes<br/>Valerie Lin<br/>Jazsalyn McNeil<br/>Mia Meus<br/>Rosa Ng<br/>Emi Sato
+                </p>
+              </div>
+              <div id="name-col-right">
+                <p>Jill Shah<br/>Sherry Shao<br/>Taylor Su<br/>Tee Topor<br/>Ege Uz<br/>Yichan Wang<br/>Terri Wright<br/>Allie Xiao<br/>Shawn Zhang<br/>May Zhou</p>
+
+              </div>
+            </div>
+
           </div>
+          
           <div id="section-4">
-            <h5>COLOPHON</h5>
-            <p>GlyphWorld <span>by</span> Leah Maldonado Neue Machina <span>by</span> Pangram Pangram Favorit <span>by</span> Dinamo</p>
+            <h5>Colophony</h5>
+            <p>GlyphWorld <span>by</span> Leah Maldonado<br/>Neue Machina <span>by</span> Pangram Pangram<br/>
+            Favorit <span>by</span> Dinamo</p>
           </div>
         </div>
       </div>
