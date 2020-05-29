@@ -10,6 +10,11 @@
   -webkit-text-stroke: 2px $color;
 }
 
+@mixin poster-mobile($color: $tertiary) {
+  @include poster;
+  font-size: 3.125rem;
+}
+
 @mixin logo($color: $secondary) {
   font-family: 'GlyphWorld', sans-serif;
   font-size: 1.4375rem;
@@ -95,7 +100,7 @@
 
 @mixin caption-lg($color: $dark) {
   font-family: 'Neue Machina', sans-serif;
-  font-family: 1.25rem;
+  font-size: 1.25rem;
   font-weight: 300;
   line-height: 110%;
   letter-spacing: 0.05em;

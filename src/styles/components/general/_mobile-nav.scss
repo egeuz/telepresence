@@ -23,31 +23,18 @@
   }
 
   button {
-    width: 1.25rem;
-    height: 1.875rem;
-    border: none;
-    background: none;
-    background-image: url('../../assets/icons/closex.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    @include close-button;
     filter: invert(1);
-    // transition: filter 0.25s; //interesting effect, keep it in
-    cursor: pointer;
     position: absolute;
     top: 1.25rem;
     right: 5vw;
-
-    &:hover {
-      filter: invert(13%) sepia(81%) saturate(5227%) hue-rotate(270deg) brightness(108%) contrast(140%);
-    }
   }
 
   &:before {
     @include h3($light);
     content: "";
     position: absolute;
-    background-image: url("../../assets/secret.png");
+    background-image: url("../../../assets/secret.png");
     left: 1300px;
     top: 50vh;
     width: 200px;

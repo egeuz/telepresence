@@ -4,17 +4,6 @@
   position: relative;
   overflow: hidden;
 
-  //1rem === always 16px
-
-  #canvas {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-attachment: fixed;
-  }
-
   #content {
     padding-top: 18vh;
     margin: 0 auto;
@@ -39,16 +28,10 @@
   }
 }
 
-#events-list {
-  height: 100vh;
-  width: 100%;
-}
 
 @media (min-width: $breakpoint-tablet) {
   #events-hero {
-
-
-    #content {  
+    #content {
       max-width: 700px;
 
       h5 {
@@ -70,7 +53,6 @@
 @media (min-width: $breakpoint-desktop) {
   #events-hero {
     #content {
-      // padding-top: 5.375rem;
       max-width: 1000px;
 
       #tagline {
@@ -85,7 +67,6 @@
 }
 
 @media (min-width: $breakpoint-desktop-wide) {
-
   #events-hero {
     #content {
       padding-top: 5.375rem;
@@ -98,13 +79,6 @@
           font-size: 8.75rem;
         }
       }
-    }
-  }
-  #events-hero #content #tagline {
-    font-size: 8.75rem;
-
-    span {
-      font-size: 8.75rem;
     }
   }
 }

@@ -15,11 +15,11 @@ function Header() {
 
   const visitorCount = 52;
   return (
-    <header className={(scrollDirection === "down" && scrollPosition > window.innerHeight / 4) ? "hidden" : ""}>
+    <header className={(scrollDirection === "down" && scrollPosition > window.innerHeight / 4) ? "hidden" : state.currentModalEvent ? "blur" : ""}>
       <Link to="/" id="logo">TELEPRESENCE</Link>
       <p>[there are {visitorCount} people here with you]</p>
       <nav>
-        <Link to="/gallery">gallery</Link>
+        <Link to="/projects">projects</Link>
         <Link to="/events">events</Link>
         <Link to="/about">about</Link>
       </nav>

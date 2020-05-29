@@ -1,28 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../App'
+
 /* components */
-import VideoBackground from '../components/VideoBackground'
-import Subheader from '../components/Subheader'
-/* assets */
-import blob from '../assets/blobs/1080blob.mp4'
+import EventsInfoModal from '../components/EventsInfoModal'
+import EventsHero from '../components/EventsHero'
+import EventsList from '../components/EventsList'
 
 function Events() {
+
+  const { state } = useContext(Context);
+
+  console.log(state.currentModalEvent);
+
+
   return (
     <div id="events">
-      <div id="events-hero">
-        <div id="canvas">
-          <VideoBackground url={blob} position="center" />
-        </div>
-        <div id="content">
-          <h5>JOIN US FOR A 4-DAY CYBER EXPO</h5>
-          <div id="tagline">
-            <span>JUNE 11–14</span><br/>
-            A PROGRAM OF ARTIST TALKS, WORKSHOPS, AND LIVE DEMOS
-          </div>
-        </div>
-      </div>
-      <div id="events-list">
-        <Subheader page={"events"} />
-      </div>
+      { state.currentModalEvent && <EventsInfoModal event={state.curretModalEvent} /> }
+      <EventsHero modalBlur={state.currentModalEvent ? true : false} />
+      <EventsList modalBlur={state.currentModalEvent ? true : false} />
     </div>
   )
 }

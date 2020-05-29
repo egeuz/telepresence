@@ -19,7 +19,11 @@ const initialState = {
   headerOpen: true,
   menuOpen: false,
   scrollDirection: 'up',
-  scrollPosition: window.scrollY
+  scrollPosition: window.scrollY,
+  projectsView: 'categories',
+  eventFilter: 'all',
+  eventModalOpen: false,
+  currentModalEvent: ""
 }
 
 const reducer = (state, action) => {
@@ -32,6 +36,12 @@ const reducer = (state, action) => {
       return { ...state, headerOpen: !state.headerOpen }
     case 'toggle-menu':
       return { ...state, menuOpen: !state.menuOpen }
+    case 'set-event-filter':
+      return { ...state, eventFilter: action.filter }
+    case 'open-event-modal':
+      return {...state, eventModalOpen: true, currentModalEvent: action.event }
+    case 'close-event-modal':
+      return {...state, eventModalOpen: false, currentModalEvent: "" }
     default:
       return state
   }

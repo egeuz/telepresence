@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
 import useScroll from '../hooks/useScroll'
+import DateFilter from './DateFilter'
 
-function Subheader() {
+function Subheader({page}) {
   const subheader = useRef();
   const { scrollPosition, scrollDirection } = useScroll();
   const logElementPosition = () => console.log(subheader.current.offsetTop);
@@ -15,6 +16,7 @@ function Subheader() {
       ${scrollDirection === "up" ? "offset" : ""}
       `}
     >
+      {page === "events" && <DateFilter /> }
     </div>
   )
 }

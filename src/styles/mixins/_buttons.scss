@@ -8,6 +8,7 @@
   height: 40px;
   border-radius: 50px;
   position: relative;
+  user-select: none;
 
   //drop shadow
   &::after {
@@ -45,6 +46,7 @@
   @include h6($dark);
   padding: 0 1.875rem;
   border: 1px solid $primary;
+  background: none;
 
   &::after {
     box-shadow: 0px 0px 10px $primary;
@@ -61,6 +63,7 @@
   @include h6($dark);
   height: 30px;
   padding: 0 1.25rem;
+  background: none;
   border: 1px solid $primary;
 
   &::after {
@@ -99,4 +102,20 @@
     border: 1px solid transparent;
     // box-shadow: 0px 0px 10px $secondary;
   }
+}
+
+@mixin close-button {
+  width: 1.25rem;
+    height: 1.875rem;
+    border: none;
+    background: none;
+    background-image: url('../../assets/icons/closex.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+
+    &:hover {
+      filter: invert(13%) sepia(81%) saturate(5227%) hue-rotate(270deg) brightness(108%) contrast(140%);
+    }
 }

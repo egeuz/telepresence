@@ -1,0 +1,39 @@
+#subheader {
+  background: $light;
+  z-index: 2;
+  transition: transform 0.24s;
+  border-bottom: 1px solid $dark;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &.fixed.offset {
+    transform: translateY(60px);
+  }
+}
+
+#subheader button {
+  @include small-button;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#date-filter {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 21rem;
+  padding: 40px 40px 10px;
+  // justify-content: flex-end;
+}
+
+@media (min-width: $breakpoint-mobile) {
+  #date-filter {
+    justify-content: flex-end;
+    max-width: none;
+    padding: 15px 40px 5px;
+  }
+}

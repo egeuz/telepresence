@@ -12,24 +12,29 @@
 /*** BASE STYLES ***/
 @import './base-styles';
 
-/*** COMPONENT STYLES ***/
-@import './components/header';
-@import './components/mobile-nav';
-@import './components/footer';
-@import './components/signup-form';
-@import './components/subheader';
-@import './components/video-background';
+/*** PAGES & COMPONENTS ***/
+//general
+@import './components/general/header';
+@import './components/general/subheader';
+@import './components/general/footer';
+@import './components/general/mobile-nav';
+@import './components/general/video-background';
 
-/*** LAYOUTS ***/
-@import './pages/coming-soon';
-@import './pages/about';
-@import './pages/events';
+//coming soon
+@import './components/coming-soon/coming-soon';
+@import './components/coming-soon/signup-form';
 
-//GALLERY
-@import './pages/projects';
+//projects
+@import './components/projects/projects';
 
-//PROJECTS PAGE
+//project page
+@import './components/projects/projects';
 
-//EVENTS PAGE
+//events
+@import './components/events/events-info-modal';
+@import './components/events/events-hero';
+@import './components/events/event-list-section';
+@import './components/events/event-card';
 
-//ABOUT PAGE
+//about
+@import './components/about/about';
