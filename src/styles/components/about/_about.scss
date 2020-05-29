@@ -1,11 +1,14 @@
+
+
 #about {
   //adding to Pranjal's code
   #about-hero {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100vh;
-    padding-left: 3rem;
-    padding-top: 12rem;
-    background-image: url('../../../assets/about-hero.png');
+    padding-top: 3.75rem; //heading height
+    background-image: url('../../assets/about-hero.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -19,9 +22,102 @@
 
     p {
       @include poster($secondary);
-      text-align: left;
-      -webkit-text-fill-color: transparent; //remove fill
-      margin-top: 0rem;
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-top: 0px;
+    }
+    
+  }
+
+  #about-hero-content{
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  #about-content {
+    background: #FFF;
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    
+
+    #left-col {
+      display: hidden;
+    }
+
+    #right-col {
+      // flex: 50%;
+      margin: 0 auto;
+      width: 90%;
+      padding-top: 3rem;
+
+      h3 {
+        font-weight: normal;
+      }
+
+      p {
+        @include p($dark);
+      }
+
+      #section-2, #section-3, #section-4 {
+        margin-top: 5rem;
+      }
+
+      #section-1 h3 {
+        margin-top: 0;
+      }
+
+      #section-3{
+        #contributors-names{
+          #name-col-right, p{
+            padding:0px;
+            display: inline-block;
+            width: 40vw;
+            vertical-align: top;
+          }
+          #name-col-left{
+            margin-right:6vw;
+            display: inline-block;
+            width: 40vw;
+            vertical-align: top;
+          }
+        }
+      }
+
+
+      #section-4{ 
+        margin-bottom: 3rem;
+        p {
+        @include excerpt($tertiary);
+        }
+
+        span {
+        @include excerpt($dark);
+        }
+
+        h5 {
+        @include h5($dark);
+        font-weight: normal;
+        margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// Emi making the site responsive
+@media (min-width: $breakpoint-tablet) {
+
+  #about-hero {
+    background-size: 800px;
+    background-position: bottom right;
+    #about-hero-content{
+      p {
+        // @include poster($secondary);
+        font-size: 4.75rem;
+      }
     }
   }
 
@@ -32,7 +128,7 @@
     overflow-y: scroll;
 
     #left-col {
-      background-image: url('../../../assets/about-alphaoct.png');
+      background-image: url('../../assets/about-alphaoct.png');
       background-repeat: no-repeat;
       background-position: left top;
       background-size: 100% auto;
@@ -76,4 +172,139 @@
       }
     }
   }
+    
+}
+
+
+@media (min-width: $breakpoint-desktop) {
+
+  #about-hero {
+    #about-hero-content{
+      p {
+        @include poster($secondary);
+        font-size: 6.75rem;
+      }
+    }
+  }
+  #about-content {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+
+    #left-col {
+      display: block;
+      background-image: url('../../assets/about-alphaoct.png');
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 100% auto;
+      background-color: $dark;
+      flex: 50%;
+    }
+
+    #right-col {
+      background: #F9E8FF;
+      flex: 50%;
+      padding: 6rem;
+
+      h3 {
+        font-weight: normal;
+      }
+
+      p {
+        @include p($dark);
+      }
+
+      #section-2, #section-3, #section-4 {
+        margin-top: 5rem;
+      }
+
+      #section-1 h3 {
+        margin-top: 0;
+      }
+
+      #section-4 p {
+        @include excerpt($tertiary);
+      }
+
+      #section-4 span {
+        @include excerpt($dark);
+      }
+
+      #section-4 h5 {
+        @include h5($dark);
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+
+
+@media (min-width: $breakpoint-desktop-wide) {
+  #about-hero {
+    #about-hero-content{
+      p {
+        // @include poster($secondary);
+        font-size: 8.75rem;
+      }
+    }
+  }
+
+  #about-content {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+
+    #left-col {
+      display: block;
+      background-image: url('../../assets/about-alphaoct.png');
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 100% auto;
+      background-color: $dark;
+      flex: 50%;
+    }
+
+    #right-col {
+      background: #F9E8FF;
+      flex: 50%;
+      padding: 6rem;
+
+      h3 {
+        font-weight: normal;
+      }
+
+      p {
+        @include p($dark);
+      }
+
+      #section-2, #section-3, #section-4 {
+        margin-top: 5rem;
+      }
+
+      #section-1 h3 {
+        margin-top: 0;
+      }
+
+      #section-4 p {
+        @include excerpt($tertiary);
+      }
+
+      #section-4 span {
+        @include excerpt($dark);
+      }
+
+      #section-4 h5 {
+        @include h5($dark);
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  
 }
