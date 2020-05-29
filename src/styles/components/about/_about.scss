@@ -73,13 +73,13 @@
           #name-col-right, p{
             padding:0px;
             display: inline-block;
-            width: 40vw;
+            // width: 10vw;
             vertical-align: top;
           }
           #name-col-left{
             margin-right:6vw;
             display: inline-block;
-            width: 40vw;
+            // width: 10vw;
             vertical-align: top;
           }
         }
@@ -218,12 +218,26 @@
       #section-2, #section-3, #section-4 {
         margin-top: 5rem;
       }
-
-      #section-1 h3 {
-        margin-top: 0;
+    
+      #section-3{
+        #contributors-names{
+          #name-col-right, p{
+            padding:0px;
+            display: inline-block;
+            // width: 20vw;
+            vertical-align: top;
+          }
+          #name-col-left{
+            margin-right:6vw;
+            display: inline-block;
+            // width: 10vw;
+            vertical-align: top;
+          }
+        }
       }
 
-      #section-4 p {
+      #section-4{ 
+        p {
         @include excerpt($tertiary);
       }
 
@@ -236,7 +250,9 @@
         font-weight: normal;
         margin-bottom: 0;
       }
-    }
+    } //--- #section-4 end
+
+  }//----- #right-col END
   }
 }
 
