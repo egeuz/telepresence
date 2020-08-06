@@ -1,0 +1,82 @@
+header {
+  width: 100%;
+  height: 3.75rem;
+  padding: 0 5vw;
+  background: $dark;
+  border-bottom: 1px solid $light;
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+  transition: transform 0.24s;
+  z-index: 2;
+
+  &.hidden {
+    transform: translateY(-3.75rem);
+  }
+
+  #logo {
+    @include logo;
+    @include hover-blur;
+    align-self: center;
+  }
+
+  p {
+    display: none;
+    @include ui-inline($secondary);
+    @include hover-deblur;
+    margin: 0;
+    align-self: center;
+  }
+
+  nav {
+    align-self: center;
+    display: none;
+
+    a {
+      @include caption-lg($light);
+      @include hover-blur;
+      margin-left: 1.875rem;
+    }
+
+    a:hover,
+    a.active {
+      color: $secondary;
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 1.5rem;
+    cursor: pointer;
+
+    &:hover img {
+      filter: $black-filter $secondary-filter;
+      //no need for transition because this is the mobile menu button
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  header {
+    button {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  header {
+    padding: 0 3.125rem;
+
+    p {
+      display: block;
+    }
+  }
+}

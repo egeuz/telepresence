@@ -1,0 +1,16 @@
+@mixin hover-blur {
+  transition: filter 0.2s, color 0.2s;
+
+  &:hover {
+    filter: blur(2px);
+  }
+}
+
+@mixin hover-deblur {
+  filter: blur(2px);
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: none;
+  }
+}
