@@ -1,21 +1,30 @@
 import React, { useContext } from 'react'
+import { GlobalState } from '../App'
 import { Link } from 'react-router-dom'
-import { Context } from '../App'
-import hamburgerMenu from '../assets/icons/hamburger-menu.svg'
 
-import useScroll from '../hooks/useScroll'
+/* ASSETS */
+import hamburgerMenu from '../Assets/Icons/hamburger-menu.svg'
+
+/* HOOKS */
+import useScroll from '../Hooks/useScroll'
 
 function Header() {
-  const { state, dispatch } = useContext(Context);
+  const { state, dispatch } = useContext(GlobalState);
   const {scrollPosition, scrollDirection} = useScroll();
 
   const revealMenu = () => {
     dispatch({ type: "toggle-menu" });
   }
 
+  //replace with concurrent user count sometime 
   const visitorCount = 52;
+
   return (
-    <header className={(scrollDirection === "down" && scrollPosition > window.innerHeight / 4) ? "hidden" : state.currentModalEvent ? "blur" : ""}>
+    <header className={
+        scrollDirection === "down" && scrollPosition > window.innerHeight / 4 ? 
+        "hidden" : 
+        ""
+      }>
       <Link to="/" id="logo">TELEPRESENCE</Link>
       <p>[there are {visitorCount} people here with you]</p>
       <nav>

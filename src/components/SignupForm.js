@@ -5,7 +5,6 @@ const Form = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const type = "Keep Me Posted"
 
   const submit = () => {
     const EMAIL = email;
@@ -20,7 +19,7 @@ const Form = ({ status, message, onValidated }) => {
       firstName &&
       lastName &&
       email.indexOf("@") > -1 &&
-      onValidated({ EMAIL, FNAME, LNAME, TYPE: type });
+      onValidated({ EMAIL, FNAME, LNAME });
   }
 
 
@@ -56,10 +55,6 @@ const Form = ({ status, message, onValidated }) => {
         />
         <label htmlFor="first-name">Email</label>
       </div>
-      <input
-        type="hidden"
-        value={type}
-      />
       <button id="submit" onClick={submit}>GET IN TOUCH</button>
       <div id="message">
         {status === "sending" && <p>Sending...</p>}

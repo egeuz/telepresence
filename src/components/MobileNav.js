@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Context } from '../App'
+import { GlobalState } from '../App'
 
 function MobileNav() {
-  const { state, dispatch } = useContext(Context)
+  const { state, dispatch } = useContext(GlobalState)
 
   const closeMobileNav = () => {
     dispatch({ type: "toggle-menu" })

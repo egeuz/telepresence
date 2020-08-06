@@ -1,0 +1,15 @@
+#projects-showcase {
+  width: 100%;
+  position: relative;
+  // z-index: 1;
+
+  &.offset {
+    padding-top: calc(7.1815rem - 1px);
+  }
+}
+
+@media (min-width: $breakpoint-mobile) {
+  #projects-showcase.offset {
+    padding-top: 3.75rem;
+  }
+}

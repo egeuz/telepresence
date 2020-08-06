@@ -1,11 +1,12 @@
 import React, {useContext} from 'react'
-import {Context} from '../App'
+import {GlobalState} from '../App'
 
-import ParsonsLogo from '../assets/parsons-logo.svg'
+import ParsonsLogo from '../Assets/parsons-logo.svg'
 
 function Footer() {
 
-  const {state} = useContext(Context);
+  const {state} = useContext(GlobalState);
+  
   return (
     <footer className={state.currentModalEvent ? "blur" : ""}>
       <div id="social-media-links">

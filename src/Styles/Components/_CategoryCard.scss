@@ -1,0 +1,119 @@
+.category-card {
+  background: $light;
+  border: 1px solid $dark;
+  border-bottom: none;
+  // max-width: 1000px;
+  height: 10.625rem;
+  padding: 1.625rem 2rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0;
+
+  .category-info {
+    h3 {
+      margin: 0;
+      cursor: pointer;
+    }
+
+    p {
+      @include caption-med;
+      margin: 0.625rem 0 0;
+    }
+  }
+
+  .desktop-category-details {
+    display: none;
+  }
+
+  .mobile-category-details {
+    display: none;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    p {
+      @include caption-med($light);
+      margin: 1rem 0 3rem;
+    }
+  }
+
+  .mobile-category-expand {
+    display: block;
+    width: 1.125rem;
+    height: 0.5rem;
+    border: none;
+    background: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(../../Assets/Icons/arrow-down.svg);
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+.category-card.active {
+  background: $dark;
+  min-height: 10.625rem;
+  height: auto;
+
+  .category-info {
+    h3 {
+      @include h3($light);
+    }
+
+    p {
+      color: $light;
+    }
+  }
+
+  .mobile-category-details {
+    display: block;
+    color: $light;
+  }
+
+  .mobile-category-expand {
+    background-image: url(../../Assets/Icons/arrow-up.svg);
+  }
+}
+
+
+
+@media (min-width: $breakpoint-desktop) {
+
+  .category-card {
+    width: 100%;
+
+    .mobile-category-expand {
+      display: none;
+    }
+  }
+
+  .category-card.active {
+    height: 360px;
+
+    .mobile-category-details {
+      display: none;
+    }
+
+    .desktop-category-details {
+      display: block;
+
+      p {
+        @include caption-med($light);
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop-wide) {
+  .category-card {
+    max-width: 360px;
+    height: 360px;
+  }
+}

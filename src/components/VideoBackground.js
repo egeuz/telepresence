@@ -1,11 +1,15 @@
 import React from 'react'
 
-function VideoBackground({url, position}) {
+function VideoBackground({ videoURL, imageURL, position = "center", attachment="fixed" }) {
   return (
     <div id="video-background">
-      <div id="video-container" className={position}>
-        <video src={url} autoPlay muted loop />
-      </div>
+      {
+        videoURL && imageURL &&
+        <div id="video-container" className={`${position} ${attachment}`}>
+          <video src={videoURL} autoPlay muted loop />
+          <img src={imageURL} alt="An abstract translucent blob, undulating in the dark." />
+        </div>
+      }
     </div>
   )
 }

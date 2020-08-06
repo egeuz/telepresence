@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 
 function useScroll() {
-
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [scrollDirection, setScrollDirection] = useState("up");
-
+  
   const handleScroll = () => {
     setScrollPosition(prevPosition => {
       const scrollPosition = window.scrollY
@@ -21,7 +20,7 @@ function useScroll() {
     }
   }, [])
 
-  return { scrollPosition, scrollDirection }
+  return {scrollPosition, scrollDirection}
 }
 
 export default useScroll
