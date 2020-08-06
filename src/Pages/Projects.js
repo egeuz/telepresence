@@ -12,7 +12,7 @@ import ProjectsShowcase from '../Components/ProjectsShowcase'
 
 function Projects() {
   const [content, setContent] = useState("");
-  const {state, dispatch} = useContext(GlobalState);
+  const { state, dispatch } = useContext(GlobalState);
 
   const { windowWidth, windowHeight } = useWindowSize();
   const { scrollPosition } = useScroll();
@@ -20,7 +20,7 @@ function Projects() {
 
   useEffect(() => {
     const setProjectList = (projects) => {
-      dispatch({type: "set-project-list", projects})
+      dispatch({ type: "set-project-list", projects })
     }
 
     fetchPageContent("projects_landing", setContent);
@@ -31,7 +31,7 @@ function Projects() {
   return (
     <React.Fragment>
       {
-        content &&
+        content && state.projects &&
         <div id="projects">
           <VideoBackground
             videoURL={scrollPosition < windowHeight / 3 ? content.hero_video.url : state.currentCategory ? state.currentCategory.category_video.url : content.hero_video.url}
@@ -43,6 +43,7 @@ function Projects() {
             }
             attachment={windowWidth >= 750 ? "fixed" : ""}
           />
+
           <ProjectsLanding
             leftHand={content.left_hand}
             rightHand={content.right_hand}

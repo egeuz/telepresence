@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { GlobalState } from '../App'
 
+/* ASSETS */
+import backgroundBlob from '../Assets/background.mp4'
+import blobwell from '../Assets/blobwell.png'
+
 /* COMPONENTS */
 import StudentCard from './StudentCard'
-
-// <div className="letter-card">
-// <div>S</div>
-// </div>
+import VideoBackground from './VideoBackground'
 
 function StudentView() {
 
@@ -15,6 +16,12 @@ function StudentView() {
   return (
 
     <div id="student-view">
+      <VideoBackground 
+        videoURL={backgroundBlob} 
+        imageURL={blobwell} 
+        attachment="" 
+        position="fullscreen"
+      />
       {
         state.projects.sort((a, b) =>
           b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1
@@ -24,7 +31,7 @@ function StudentView() {
               state.projects[index - 1].data.authors[0].last_name[0].text[0] < project.data.authors[0].last_name[0].text[0])
           ) {
             return (
-              <React.Fragment>
+              <React.Fragment key={project.data.title[0].text}>
                 <div className="letter-card">
                   <div>{project.data.authors[0].last_name[0].text[0]}</div>
                 </div>
@@ -34,10 +41,7 @@ function StudentView() {
           } else {
             return <StudentCard key={project.data.title[0].text} project={project.data} />
           }
-
-        }
-
-        )
+        })
       }
     </div>
   )

@@ -17,12 +17,15 @@ function CategoryCard({ category }) {
   }
 
   return (
-    <div className={`category-card ${state.currentCategory && state.currentCategory.category_name[0].text === thisCategory ? "active" : ""}`}>
+    <div
+      className={`category-card ${state.currentCategory && state.currentCategory.category_name[0].text === thisCategory ? "active" : ""}`}
+      onClick={!state.currentCategory || state.currentCategory.category_name[0].text !== thisCategory ? expandCategory : clearCategory}
+    >
       <div className="category-info">
         <h3 onClick={!state.currentCategory || state.currentCategory.category_name[0].text !== thisCategory ? expandCategory : clearCategory}>
           {RichText.asText(category.category_name)}
         </h3>
-        <p>x projects</p>
+        <p>{state.projects.filter(proj => proj.data.category === thisCategory).length} projects</p>
       </div>
       <div className="desktop-category-details">
         <p>{RichText.asText(category.category_description)}</p>

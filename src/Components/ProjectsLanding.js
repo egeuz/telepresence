@@ -7,7 +7,7 @@ function ProjectsLanding({ leftHand, rightHand, logotype }) {
   const { mouseX, mouseY } = useMousePosition();
 
   const leftHandParallax = {
-    opacity: `${0.8 + mapRange(mouseX, 0, window.innerWidth, 0, 0.25) + mapRange(mouseY, 0, window.innerHeight, 0, 0.25)}`,
+    opacity: `${0.8 + mapRange(mouseX, 0, window.innerWidth, 0, 0.25) + mapRange(mouseY, 0, window.innerHeight, 0.25, 0)}`,
     transform: `translate(
                   ${mapRange(mouseX, 0, window.innerWidth, 0, 16)}px,
                   ${mapRange(mouseY, 0, window.innerHeight, 0, 16)}px
@@ -16,7 +16,7 @@ function ProjectsLanding({ leftHand, rightHand, logotype }) {
   }
 
   const rightHandParallax = {
-    opacity: `${0.8 + mapRange(mouseX, 0, window.innerWidth, 0.25, 0) + mapRange(mouseY, 0, window.innerHeight, 0.25, 0)}`,
+    opacity: `${0.8 + mapRange(mouseX, 0, window.innerWidth, 0.25, 0) + mapRange(mouseY, 0, window.innerHeight, 0, 0.25)}`,
     transform: `translate(
                   ${mapRange(mouseX, 0, window.innerWidth, 0, 16)}px,
                   ${mapRange(mouseY, 0, window.innerHeight, 0, 16)}px

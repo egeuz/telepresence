@@ -1,12 +1,10 @@
 #student-view {
-  background: $dark;
   width: 100%;
   min-height: 100vh;
 }
 
 .letter-card {
   width: 100%;
-  background-image: url('../../Assets/blobwell.png');
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -25,7 +23,7 @@
   #student-view {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    grid-template-rows: auto;
+    grid-template-rows: repeat(auto-fill, 360px);
     flex-wrap: wrap;
   }
 

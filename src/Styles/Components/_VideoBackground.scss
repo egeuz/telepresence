@@ -1,4 +1,4 @@
-#video-background {
+.video-background {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -6,9 +6,14 @@
   left: 0;
   background: $dark;
   overflow-x: hidden;
+  z-index: -2;
+
+  &.fullscreen {
+    z-index: -1;
+  }
 }
 
-#video-container {
+.video-container {
   height: 100%;
 
   video,
@@ -17,7 +22,7 @@
     $position: calc(100vw - 705px);
     transform: translateX($position);
     transition: transform 1.5s ease-in-out;
-    z-index: 0;
+    // z-index: 0;
   }
 
   video {
@@ -47,16 +52,28 @@
     }
   }
 
+  &.fullscreen {
+    video,
+    img {
+      width: auto;
+      opacity: 0.3;
+    }
+  }
+
   &.fixed {
     video,
     img {
       position: fixed;
     }
   }
+
+  &.none {
+    z-index: -1;
+  }
 }
 
 @media (min-width: $breakpoint-tablet) {
-  #video-container {
+  .video-container {
     video,
     img {
       transform: none;

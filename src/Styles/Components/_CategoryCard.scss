@@ -9,11 +9,11 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 0;
+  cursor: pointer;
 
   .category-info {
     h3 {
       margin: 0;
-      cursor: pointer;
     }
 
     p {
