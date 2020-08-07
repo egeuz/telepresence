@@ -6,10 +6,6 @@ function CategoryProjectList({ match, excludedProject = "", maxSize = "" }) {
 
   const { state } = useContext(GlobalState)
 
-
-
-  console.log(match)
-
   return (
     <div className="category-project-list">
       {
@@ -22,9 +18,6 @@ function CategoryProjectList({ match, excludedProject = "", maxSize = "" }) {
               return project.data.category === match
             }
           })
-          .sort((a, b) =>
-            b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1
-          )
           .map((project, index) => 
             <StudentCard
               key={`project-card-${index}`}

@@ -18,17 +18,21 @@
 @import './Pages/Project';
 
 /** COMPONENTS **/
+@import './Components/AuthorInfo';
 @import './Components/CategoryCard';
 @import './Components/CategoryProjectList';
 @import './Components/CategoryView';
+@import './Components/CoverImage';
 @import './Components/Footer';
 @import './Components/Header';
 @import './Components/MobileNav';
+@import './Components/ProjectContent';
 @import './Components/ProjectFooter';
+@import './Components/ProjectInfo';
 @import './Components/ProjectsLanding';
 @import './Components/ProjectsShowcase';
 @import './Components/SignupForm';
-@import './Components/Subheader';
 @import './Components/StudentCard';
 @import './Components/StudentView';
+@import './Components/Subheader';
 @import './Components/VideoBackground';

@@ -70,6 +70,7 @@
 @mixin h4($color: $dark) {
   font-family: 'Neue Machina', sans-serif;
   font-size: 1.625rem;
+  font-weight: 400;
   color: $color;
 }
 

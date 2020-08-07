@@ -22,9 +22,7 @@ function StudentView() {
         position="fullscreen"
       />
       {
-        state.projects.sort((a, b) =>
-          b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1
-        ).map((project, index) => {
+        state.projects.map((project, index) => {
           if (
             index === 0 || (state.projects[index - 1] &&
               state.projects[index - 1].data.authors[0].last_name[0].text[0] < project.data.authors[0].last_name[0].text[0])

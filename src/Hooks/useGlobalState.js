@@ -5,7 +5,8 @@ const initialState = {
   menuOpen: false,
   projectsViewMode: "category",
   currentCategory: "",
-  projects: ""
+  projects: "",
+  currentProject: ""
 }
 
 const globalStateReducer = (state, action) => {
@@ -17,9 +18,11 @@ const globalStateReducer = (state, action) => {
     case 'toggle-projects-view-mode':
       return { ...state, projectsViewMode: action.viewMode }
     case 'set-current-category':
-      return {...state, currentCategory: action.category }
+      return { ...state, currentCategory: action.category }
     case 'set-project-list':
-      return {...state, projects: action.projects}
+      return { ...state, projects: action.projects }
+    case 'set-current-project':
+      return { ...state, currentProject: action.project }
     default:
       return state
   }

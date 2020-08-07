@@ -37,6 +37,11 @@ function App() {
         const id = project.data.title[0].text.toLowerCase(0).replace(/[.,/#!$%^&?*;:{}=\-_`~()]/g,"").replace(/ /g, '_')
         project.data.id = id;
       })
+
+      //sort projects alphabetically manually because for some reason the CMS API's sort doesn't work
+      projects = projects.sort((a, b) =>
+      b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1)
+
       dispatch({ type: "set-project-list", projects })
     }
 

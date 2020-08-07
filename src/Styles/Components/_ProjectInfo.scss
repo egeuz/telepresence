@@ -1,0 +1,42 @@
+#project-info {
+  padding: 3.75rem 1.25rem 0;
+  max-width: 41rem;
+
+  h2 {
+    @include h2-mobile;
+    margin: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    @include p;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+
+
+  #project-info {
+    padding: 4.375rem 1.25rem;
+    display: grid;
+    grid-template-columns: 0.65fr 0.35fr;
+    max-width: 70.625rem;
+    margin: 0 auto;
+
+    h2 {
+      @include h2;
+      margin-bottom: 1.875rem;
+      max-width: 655px;
+    }
+
+    p {
+      max-width: 655px;
+    }
+  }
+}
+
+@media (min-width: 1164px) {
+  #project-info {
+    padding: 4.375rem 0;
+  }
+}

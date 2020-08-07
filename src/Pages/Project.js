@@ -1,46 +1,42 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { GlobalState } from '../App'
 
 /* COMPONENTS */
+import ProjectCover from '../Components/ProjectCover'
 import ProjectInfo from '../Components/ProjectInfo'
+import ProjectContent from '../Components/ProjectContent'
 import AuthorInfo from '../Components/AuthorInfo'
 import ProjectFooter from '../Components/ProjectFooter'
 
 function Project({ match }) {
 
-  const { state } = useContext(GlobalState);
-  const [project, setProject] = useState("");
+  const { state, dispatch } = useContext(GlobalState);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     if (state.projects) {
       const projectData = state.projects.find(
         project => project.data.id === match.params.projectID
       ).data
-      setProject(projectData)
+      dispatch({type: "set-current-project", project: projectData })
     }
-  }, [state.projects, match.params.projectID])
 
-  console.log(match.params.projectID); 
-
+    return () => {
+      dispatch({type: "set-current-project", project: ""})
+    }
+  }, [state.projects, dispatch, match.params.projectID])
 
   return (
     <React.Fragment>
       {
-        project &&
+        state.currentProject &&
         <div id="project">
-          <div
-            id="cover-image"
-            style={{
-              backgroundImage: `url(${project.cover_image.url})`
-            }}
-          />
-          <ProjectInfo project={project} />
-          <div id="project-content">
-          </div>
-          <AuthorInfo project={project} />
-          <ProjectFooter project={project} />
+          <ProjectCover project={state.currentProject} />
+          <ProjectInfo project={state.currentProject} />
+          <ProjectContent project={state.currentProject} />
+          <AuthorInfo project={state.currentProject} />
+          <ProjectFooter project={state.currentProject} />
         </div>
       }
     </React.Fragment>

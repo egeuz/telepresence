@@ -9,7 +9,7 @@ export default async function fetchPageContent(type, callback) {
   const response = await Client.query(
     Prismic.Predicates.at('document.type', type), { pageSize: 100 }
   )
-  
+
   if (response) {
     if (type === "project" || type === "event") {
       callback(response.results);

@@ -1,0 +1,182 @@
+#project-content {
+  width: 100%;
+  max-width: 70.625rem;
+  padding: 5rem 0;
+
+  & > div {
+    margin: 2.5rem 0;
+  }
+}
+
+.text-box {
+  max-width: 41rem;
+  padding: 0 1.25rem;
+
+  h4 {
+    margin: 0;
+    margin-bottom: 1.25rem;
+  }
+  p {
+    @include p;
+    margin: 1.25rem 0 2.5rem;
+  }
+}
+
+.image {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  span {
+    display: block;
+    @include caption-sm;
+    max-width: 23.125rem;
+    margin: 1.25rem;
+  }
+}
+
+.single-image {
+  width: 100%;
+}
+
+.two-image-grid {
+  width: 100%;
+
+  .image {
+    margin-bottom: 1rem;
+  }
+}
+
+.three-image-grid {
+  width: 100%;
+
+  .image {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.video {
+  width: 100%;
+
+  iframe {
+    width: 100%;
+    height: 56.25vw;
+  }
+}
+
+.unity {
+  width: 100%;
+  background: $dark;
+  display: grid;
+
+  &.widescreen {
+    height: 56.25vw;
+  }
+
+  &.standard {
+    height: 75vw;
+  }
+
+  p {
+    @include excerpt($light);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  iframe {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .single-image {
+    .image {
+      display: grid;
+    }
+    span {
+      justify-self: right;
+    }
+  }
+
+  .two-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 0.625rem;
+
+    .image {
+      margin-bottom: 0;
+    }
+
+    span {
+      margin: 1.25rem 0;
+    }
+  }
+
+  .three-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 0.625rem;
+
+    .image {
+      margin-bottom: 0;
+    }
+
+    span {
+      margin: 1.25rem 0;
+    }
+  }
+
+  .unity {
+    width: 100%;
+    height: 56.25vw;
+
+    p {
+      display: none;
+    }
+
+    iframe {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  #project-content {
+    margin: 0 auto;
+    padding: 7.5rem 0;
+  }
+
+  .text-box {
+    padding: 0;
+  }
+
+  .single-image {
+    span {
+      margin: 1.25rem 0;
+    }
+  }
+
+  .video {
+    iframe {
+      height: calc(70.625rem * 0.5625);
+    }
+  }
+
+  .unity {
+    &.widescreen {
+      height: calc(70.625rem * 0.5625);
+    }
+
+    &.standard {
+      height: calc(70.625rem * 0.75);
+    }
+  }
+}
