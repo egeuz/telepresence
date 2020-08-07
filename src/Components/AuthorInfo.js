@@ -2,6 +2,9 @@ import React from 'react'
 import { RichText } from 'prismic-reactjs'
 
 function AuthorInfo({ project, inGrid = false }) {
+
+  console.log(project.author_links);
+
   return (
     <div id="author-info" className={`${inGrid ? "in-grid" : ""}`}>
       <div id="line" />
@@ -19,8 +22,16 @@ function AuthorInfo({ project, inGrid = false }) {
       }
       <div id="social-media-links">
         {
+          project.author_links &&
           project.author_links.map((link, index) =>
-            <a key={`${link.source}-${index}`} href={link.url.url}>{RichText.asText(link.source).toUpperCase()}</a>
+            <a 
+              key={`${link.source}-${index}`} 
+              href={`${link.source === "Email" ? "mailto:" : ""}${link.url.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            {link.source && link.source.toUpperCase()}
+            </a>
           )
         }
       </div>

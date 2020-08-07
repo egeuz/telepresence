@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 /* COMPONENTS */
@@ -10,6 +10,8 @@ import Footer from './Components/Footer'
 import ComingSoon from './Pages/ComingSoon'
 import Projects from './Pages/Projects'
 import Project from './Pages/Project'
+import About from './Pages/About'
+import Events from './Pages/Events'
 
 /* CMS */
 import fetchPageContent from './CMS/fetchPageContent'
@@ -34,13 +36,13 @@ function App() {
     const setProjectList = (projects) => {
       projects.forEach(project => {
         //make a url slug by removing all spaces and punctuation from the title
-        const id = project.data.title[0].text.toLowerCase(0).replace(/[.,/#!$%^&?*;:{}=\-_`~()]/g,"").replace(/ /g, '_')
+        const id = project.data.title[0].text.toLowerCase(0).replace(/[.,/#!$%^&?*;:{}=\-_`~()]/g, "").replace(/ /g, '_')
         project.data.id = id;
       })
 
       //sort projects alphabetically manually because for some reason the CMS API's sort doesn't work
       projects = projects.sort((a, b) =>
-      b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1)
+        b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1)
 
       dispatch({ type: "set-project-list", projects })
     }
@@ -58,6 +60,9 @@ function App() {
             <Route path="/" exact component={ComingSoon} />
             <Route path="/projects" exact component={Projects} />
             <Route path="/project/:projectID" exact component={Project} />
+            <Route path="/events" exact component={Events} />
+            <Route path="/about" exact component={About} />
+            <Route path="/comingsoon" exact component={ComingSoon} />
           </Switch>
           {state.headerOpen && <Footer />}
         </Router>
