@@ -19,12 +19,8 @@ function Projects() {
 
 
   useEffect(() => {
-    const setProjectList = (projects) => {
-      dispatch({ type: "set-project-list", projects })
-    }
-
+    window.scrollTo(0, 0);
     fetchPageContent("projects_landing", setContent);
-    fetchPageContent('project', setProjectList);
 
   }, [dispatch])
 

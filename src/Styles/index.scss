@@ -15,6 +15,7 @@
 /** PAGES **/
 @import './Pages/ComingSoon';
 @import './Pages/Projects'; //currently empty, may change
+@import './Pages/Project';
 
 /** COMPONENTS **/
 @import './Components/CategoryCard';
@@ -23,6 +24,7 @@
 @import './Components/Footer';
 @import './Components/Header';
 @import './Components/MobileNav';
+@import './Components/ProjectFooter';
 @import './Components/ProjectsLanding';
 @import './Components/ProjectsShowcase';
 @import './Components/SignupForm';

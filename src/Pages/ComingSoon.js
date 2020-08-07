@@ -17,6 +17,7 @@ function ComingSoon() {
   const [content, setContent] = useState("")
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch({type: 'toggle-header'})
     fetchPageContent("coming_soon", setContent)
 

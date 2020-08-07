@@ -9,6 +9,7 @@ import Footer from './Components/Footer'
 /* PAGES */
 import ComingSoon from './Pages/ComingSoon'
 import Projects from './Pages/Projects'
+import Project from './Pages/Project'
 
 /* CMS */
 import fetchPageContent from './CMS/fetchPageContent'
@@ -31,8 +32,14 @@ function App() {
 
   useEffect(() => {
     const setProjectList = (projects) => {
-      dispatch({type: "set-project-list", projects})
+      projects.forEach(project => {
+        //make a url slug by removing all spaces and punctuation from the title
+        const id = project.data.title[0].text.toLowerCase(0).replace(/[.,/#!$%^&?*;:{}=\-_`~()]/g,"").replace(/ /g, '_')
+        project.data.id = id;
+      })
+      dispatch({ type: "set-project-list", projects })
     }
+
     fetchPageContent('project', setProjectList);
   }, [dispatch])
 
@@ -45,6 +52,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={ComingSoon} />
             <Route path="/projects" exact component={Projects} />
+            <Route path="/project/:projectID" exact component={Project} />
           </Switch>
           {state.headerOpen && <Footer />}
         </Router>

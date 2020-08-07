@@ -1,0 +1,134 @@
+#project {
+  background: $light;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#cover-image {
+  width: 100%;
+  height: 62.4vw;
+  max-height: 100vh;
+  padding-top: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  img {
+    display: block;
+  }
+}
+
+#project-info {
+  padding: 3.75rem 1.25rem 0;
+  max-width: 41rem;
+
+  h2 {
+    @include h2-mobile;
+    margin: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    @include p;
+  }
+}
+
+#author-info {
+  padding: 3.75rem 1.25rem;
+
+  #line {
+    height: 1px;
+    background: $dark;
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    @include caption-med;
+    max-width: 655px;
+  }
+
+  &.in-grid {
+    display: none;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  #social-media-links {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+    a {
+      display: block;
+      @include small-button;
+      padding-top: 0.5rem;
+      margin-bottom: 0.625rem;
+      margin-right: 0.625rem;
+      // margin: 0;
+    }
+  }
+}
+
+#project-content {
+  width: 100%;
+  height: 20vh;
+  background: blue;
+}
+
+#project-footer {
+  width: 100%;
+  min-height: 75vh;
+  background: $dark;
+}
+
+@media (min-width: $breakpoint-desktop) {
+
+
+  #project-info {
+    padding: 4.375rem 0;
+    display: grid;
+    grid-template-columns: 0.65fr 0.35fr;
+    max-width: 70.625rem;
+    margin: 0 auto;
+
+    h2 {
+      @include h2;
+      margin-bottom: 1.875rem;
+      max-width: 655px;
+    }
+
+    p {
+      max-width: 655px;
+    }
+  }
+
+  #author-info {
+    display: none;
+
+    &.in-grid {
+      display: grid;
+      grid-template-columns: 1px auto;
+      grid-template-rows: auto 1fr;
+      grid-gap: 0 25px;
+      padding: 0;
+      
+
+      #line {
+        height: 100%;
+        width: 1px;
+        grid-row: 1 / span 2;
+      }
+    }
+  }
+
+  #social-media-links {
+    max-height: 80px;
+  }
+
+  #project-content {
+    max-width: 70.625rem;
+    margin: 0 auto;
+  }
+}

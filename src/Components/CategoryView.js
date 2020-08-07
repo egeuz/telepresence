@@ -16,7 +16,7 @@ function CategoryView({ categories }) {
         state.currentCategory &&
         <div id="category-details">
           <h1>{RichText.asText(state.currentCategory.category_name)}</h1>
-          <CategoryProjectList />
+          <CategoryProjectList match={RichText.asText(state.currentCategory.category_name)} />
         </div>
       }
       <div id="category-list">

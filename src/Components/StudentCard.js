@@ -1,10 +1,18 @@
 import React from 'react'
 import { RichText } from 'prismic-reactjs'
+import { Link, useLocation } from 'react-router-dom'
 
 function StudentCard({ mode = "standard", project }) {
+  const location = useLocation();
 
   return (
-    <div className={`student-card ${mode}`}>
+    <Link
+      to={location.pathname.includes("project/") ?
+        `../project/${project.id}` :
+        `project/${project.id}`
+      }
+      className={`student-card ${mode}`}
+    >
       <h3>{project.authors.map((author, index) =>
         index === 0 ?
           `${RichText.asText(author.first_name)} ${RichText.asText(author.last_name)}` :
@@ -12,7 +20,7 @@ function StudentCard({ mode = "standard", project }) {
       ).reduce((acc, val) => acc + val)}</h3>
       <p>{RichText.asText(project.title)}</p>
       <button />
-    </div>
+    </Link>
   )
 }
 

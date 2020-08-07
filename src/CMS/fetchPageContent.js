@@ -11,9 +11,9 @@ export default async function fetchPageContent(type, callback) {
   )
   
   if (response) {
-    if (response.results.length > 1) {
+    if (type === "project" || type === "event") {
       callback(response.results);
-    } else if (response.results.length === 1) {
+    } else {
       callback(response.results[0].data);
     }
   }

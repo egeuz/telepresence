@@ -33,7 +33,7 @@ function CategoryCard({ category }) {
       <div className="mobile-category-details">
         <img src={category.category_image.url} alt={category.category_image.alt} />
         <p>{RichText.asText(category.category_description)}</p>
-        <CategoryProjectList />
+        <CategoryProjectList match={state.currentCategory && state.currentCategory.category_name[0].text}/>
       </div>
       <button
         className="mobile-category-expand"

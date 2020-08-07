@@ -31,12 +31,24 @@
   // -webkit-text-stroke: 1px $color;
 }
 
+@mixin h1-mobile ($color: $dark) {
+  @include h1($color);
+  font-size: 4.3125rem;
+}
+
+
 @mixin h2 ($color: $dark) {
   font-family: 'Neue Machina', monospace;
   font-size: 3.125rem;
   line-height: 95%;
   color: $color;
 }
+
+@mixin h2-mobile ($color: $dark) {
+  @include h2($color);
+  font-size: 2.25rem;
+}
+
 
 @mixin h3($color: $dark) {
   font-family: 'GlyphWorld', sans-serif;
