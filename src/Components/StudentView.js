@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { GlobalState } from '../App'
 
 /* ASSETS */
-import backgroundBlobVid from '../Assets/background.mp4'
-import backgroundBlobImg from '../Assets/background.png'
+import backgroundVideo from '../Assets/background.mp4'
+import backgroundImage from '../Assets/background.png'
 /* COMPONENTS */
 import StudentCard from './StudentCard'
 import VideoBackground from './VideoBackground'
@@ -16,8 +16,8 @@ function StudentView() {
 
     <div id="student-view">
       <VideoBackground 
-        videoURL={backgroundBlobVid} 
-        imageURL={backgroundBlobImg} 
+        videoURL={backgroundVideo} 
+        imageURL={backgroundImage} 
         attachment="" 
         position="fullscreen"
       />

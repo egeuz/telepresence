@@ -1,0 +1,51 @@
+#events-landing {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  & > div {
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 2rem;
+  }
+
+  h5 {
+    @include h5($light);
+  }
+
+  p {
+    @include poster-mobile($secondary);
+    width: 100%;
+    margin: 0;
+
+    &:first-of-type {
+      @include poster-mobile($light);
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  #events-landing p,
+  #events-landing p:first-of-type {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  #events-landing p,
+  #events-landing p:first-of-type {
+    font-size: 6.5rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop-wide) {
+  #events-landing p {
+    @include poster($secondary);
+  }
+
+  #events-landing p:first-of-type {
+    @include poster($light);
+  }
+}

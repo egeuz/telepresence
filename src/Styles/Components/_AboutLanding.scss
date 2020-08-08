@@ -1,0 +1,50 @@
+$center-padding: calc(50vh - 150px);
+
+#about-landing {
+  width: 100%;
+  height: 100vh;
+}
+
+#landing-content {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: $center-padding 4vw;
+
+  h5 {
+    @include h5($light);
+  }
+
+  p {
+    @include poster-mobile($secondary);
+    margin: 0;
+    width: 90%;
+  }
+}
+
+
+@media (min-width: $breakpoint-tablet) {
+
+  #landing-content {
+    padding: $center-padding 1.875rem;
+
+    p {
+      font-size: 5rem;
+    }
+  }
+}
+
+@media (min-width: 1044px) {
+  #landing-content {
+    p {
+      @include poster($secondary);
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop-wide) {
+  #landing-content {
+    padding: $center-padding 0;
+  }
+}

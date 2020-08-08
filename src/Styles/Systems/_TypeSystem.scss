@@ -10,7 +10,7 @@
 }
 
 @mixin poster-mobile($color: $tertiary) {
-  @include poster;
+  @include poster($color);
   font-size: 3.125rem;
 }
 
@@ -42,6 +42,7 @@
   font-size: 3.125rem;
   line-height: 95%;
   color: $color;
+  font-weight: 400;
 }
 
 @mixin h2-mobile ($color: $dark) {
@@ -55,6 +56,7 @@
   font-size: 1.875rem;
   letter-spacing: 0.05em;
   color: $color;
+  font-weight: 400;
 
   &:hover {
     @if $color == $dark {
@@ -72,6 +74,7 @@
   font-size: 1.625rem;
   font-weight: 400;
   color: $color;
+  font-weight: 400;
 }
 
 @mixin h5($color: $dark) {
@@ -79,6 +82,7 @@
   font-size: 1rem;
   letter-spacing: 0.1em;
   color: $color;
+  font-weight: 400;
 }
 
 @mixin h6($color: $dark) {
@@ -87,6 +91,7 @@
   line-height: 110%;
   letter-spacing: 0.03em;
   color: $color;
+  font-weight: 400;
 }
 
 @mixin p($color: $dark) {

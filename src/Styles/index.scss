@@ -20,11 +20,14 @@
 @import './Pages/About';
 
 /** COMPONENTS **/
+@import './Components/AboutContent';
+@import './Components/AboutLanding';
 @import './Components/AuthorInfo';
 @import './Components/CategoryCard';
 @import './Components/CategoryProjectList';
 @import './Components/CategoryView';
 @import './Components/CoverImage';
+@import './Components/EventsShowcase';
 @import './Components/Footer';
 @import './Components/Header';
 @import './Components/MobileNav';
