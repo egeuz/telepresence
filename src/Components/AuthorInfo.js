@@ -3,8 +3,6 @@ import { RichText } from 'prismic-reactjs'
 
 function AuthorInfo({ project, inGrid = false }) {
 
-  console.log(project.author_links);
-
   return (
     <div id="author-info" className={`${inGrid ? "in-grid" : ""}`}>
       <div id="line" />

@@ -1,0 +1,100 @@
+.event-card {
+  width: 100%;
+  margin-bottom: 3.75rem;
+}
+
+.event-type {
+  margin: 0 0 1.25rem;
+}
+
+.event-image {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+
+.event-title {
+  margin: 0;
+  cursor: pointer;
+}
+
+.event-speaker {
+  @include caption-lg;
+  margin: 0.25rem 0 1.25rem;
+}
+
+.event-cta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-date-time {
+  @include ui-inline;
+
+  span {
+    display: inline-block;
+    @include ui-inline;
+    margin-right: 1rem;
+    margin-bottom: 0.375rem;
+  }
+
+  button {
+    @include ui-inline($primary);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+
+    &:hover {
+      @include hover-blur;
+    }
+  }
+}
+
+.event-card .eventbrite-button {
+  @include medium-button;
+  padding: 13px 25px;
+
+  // display: inline-block;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .event-card {
+    margin-bottom: 0;
+    max-width: 500px;
+  }
+
+  .event-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+
+    > div {
+      padding: 0 1.25rem 3.75rem;
+      margin-bottom: 0;
+    }
+
+    > div:nth-child(2n + 1) {
+      border-right: 1px solid $dark;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .event-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    > div:nth-child(2n + 1) {
+      border-right: none;
+    }
+
+    > div:nth-child(3n + 1) {
+      border-right: 1px solid $dark;
+    }
+
+    > div:nth-child(3n) {
+      border-left: 1px solid $dark;
+    }
+  }
+}

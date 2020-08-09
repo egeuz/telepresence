@@ -12,32 +12,40 @@
 /** BASE STYLES **/
 @import './BaseStyles';
 
-/** PAGES **/
-@import './Pages/ComingSoon';
-@import './Pages/Projects';
-@import './Pages/Project';
-@import './Pages/Events';
-@import './Pages/About';
-
 /** COMPONENTS **/
-@import './Components/AboutContent';
-@import './Components/AboutLanding';
-@import './Components/AuthorInfo';
-@import './Components/CategoryCard';
-@import './Components/CategoryProjectList';
-@import './Components/CategoryView';
-@import './Components/CoverImage';
-@import './Components/EventsShowcase';
+/* General */
 @import './Components/Footer';
 @import './Components/Header';
 @import './Components/MobileNav';
+@import './Components/SignupForm';
+@import './Components/Subheader';
+@import './Components/VideoBackground';
+
+/* Projects */
+@import './Components/CategoryCard';
+@import './Components/CategoryProjectList';
+@import './Components/CategoryView';
+@import './Components/ProjectsLanding';
+@import './Components/ProjectsShowcase';
+@import './Components/StudentCard';
+@import './Components/StudentView';
+
+/* Project Page */
+@import './Components/AuthorInfo';
+@import './Components/CoverImage';
 @import './Components/ProjectContent';
 @import './Components/ProjectFooter';
 @import './Components/ProjectInfo';
-@import './Components/ProjectsLanding';
-@import './Components/ProjectsShowcase';
-@import './Components/SignupForm';
-@import './Components/StudentCard';
-@import './Components/StudentView';
-@import './Components/Subheader';
-@import './Components/VideoBackground';
+
+/* Events */
+@import './Components/EventCard';
+@import './Components/EventsShowcase';
+@import './Components/EventsLanding';
+@import './Components/EventModal';
+
+/* About */
+@import './Components/AboutContent';
+@import './Components/AboutLanding';
+
+/* Coming Soon */
+@import './Components/ComingSoon';

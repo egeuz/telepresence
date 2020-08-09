@@ -3,3 +3,42 @@
   width: 100%;
   min-height: 100vh;
 }
+
+#events-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  transition: padding 0.5s;
+}
+
+#subheader.fixed + #events-content {
+  padding-top: calc(2.5rem + 120px);
+}
+
+.events-date-section {
+  width: 100%;
+  display: grid;
+
+  .poster {
+    max-width: 300px;
+    @include poster-mobile;
+    text-align: right;
+    justify-self: right;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .events-date-section .poster {
+    max-width: 500px;
+    font-size: 5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .events-date-section .poster {
+    max-width: 900px;
+    @include poster;
+  }
+}

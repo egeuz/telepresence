@@ -5,6 +5,7 @@
   max-height: 9rem;
   position: relative; 
   z-index: 1;
+  border-bottom: 1px solid $dark;
   
   transition: transform 0.24s;
 
@@ -19,10 +20,6 @@
   &.fixed.offset {
     transform: translateY(60px);
   }
-}
-
-#subheader.fixed {
-  border-bottom: 1px solid $dark;
 }
 
 #subheader button {
@@ -53,8 +50,13 @@
 #date-filter {
   display: flex;
   flex-wrap: wrap;
-  max-width: 21rem;
-  padding: 40px 40px 10px;
+  // max-width: 21rem;
+  padding: 2.5rem 1.25rem 1.25rem;
+
+  button {
+    margin-right: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
 }
 
 @media (min-width: $breakpoint-mobile) {
@@ -88,7 +90,7 @@
   #date-filter {
     justify-content: flex-end;
     max-width: none;
-    padding: 15px 40px 5px;
+    padding: 1rem 2.5rem 0.3125rem;
   }
 }
 

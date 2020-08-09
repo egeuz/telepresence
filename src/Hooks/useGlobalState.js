@@ -6,7 +6,11 @@ const initialState = {
   projectsViewMode: "category",
   currentCategory: "",
   projects: "",
-  currentProject: ""
+  currentProject: "",
+  events: "",
+  dateFilter: "",
+  modalEvent: "",
+  modalDirectToForm: false
 }
 
 const globalStateReducer = (state, action) => {
@@ -23,6 +27,12 @@ const globalStateReducer = (state, action) => {
       return { ...state, projects: action.projects }
     case 'set-current-project':
       return { ...state, currentProject: action.project }
+    case 'set-event-list':
+      return { ...state, events: action.events }
+    case 'set-date-filter':
+      return { ...state, dateFilter: action.filter }
+    case 'set-modal-event':
+      return { ...state, modalEvent: action.event, modalDirectToForm: action.directToForm }
     default:
       return state
   }

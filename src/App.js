@@ -29,7 +29,6 @@ import useGlobalState from './Hooks/useGlobalState'
 export const GlobalState = React.createContext()
 
 function App() {
-
   const { state, dispatch } = useGlobalState();
 
   useEffect(() => {
@@ -47,7 +46,12 @@ function App() {
       dispatch({ type: "set-project-list", projects })
     }
 
+    const setEventList = events => {
+      dispatch({ type: "set-event-list", events })
+    }
+
     fetchPageContent('project', setProjectList);
+    fetchPageContent('event', setEventList);
   }, [dispatch])
 
   return (
