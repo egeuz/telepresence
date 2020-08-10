@@ -1,9 +1,6 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { GlobalState } from '../App'
 
-/* ASSETS */
-import backgroundVideo from '../Assets/background.mp4'
-import backgroundImage from '../Assets/background.png'
 /* COMPONENTS */
 import StudentCard from './StudentCard'
 import VideoBackground from './VideoBackground'
@@ -11,11 +8,6 @@ import VideoBackground from './VideoBackground'
 function StudentView({bgVideo, bgImage}) {
 
   const { state } = useContext(GlobalState);
-
-  useEffect(() => {
-    window.scrollTo(0, window.innerHeight - 60);  
-  }, [])
-  
 
   return (
 

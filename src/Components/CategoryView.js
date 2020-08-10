@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { GlobalState } from '../App'
 import { RichText } from 'prismic-reactjs'
 
@@ -9,11 +9,7 @@ import CategoryProjectList from './CategoryProjectList'
 function CategoryView({ categories }) {
 
   const { state } = useContext(GlobalState)
-
-  useEffect(() => {
-    window.scrollTo(0, window.innerHeight - 60);  
-  }, [])
-
+  
   return (
     <div id="category-view">
       {

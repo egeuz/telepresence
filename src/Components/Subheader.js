@@ -11,16 +11,21 @@ function Subheader({ page }) {
       id="subheader"
       className={`${scrollPosition > window.innerHeight ? "fixed" : ""} ${scrollDirection === "up" ? "offset" : ""}`}
     >
-      {page === "projects" ? <ProjectViewToggle dispatch={dispatch} /> : <DateFilter dispatch={dispatch} />}
+      {
+        page === "projects" ? 
+        <ProjectViewToggle dispatch={dispatch} scrollPosition={scrollPosition} /> : 
+        <DateFilter dispatch={dispatch} />
+      }
     </div>
   )
 }
 
-function ProjectViewToggle({ dispatch }) {
+function ProjectViewToggle({ dispatch, scrollPosition }) {
   const [viewMode, setViewMode] = useState("category")
 
 
   const handleProjectToggle = (event) => {
+    if (scrollPosition > window.innerHeight) window.scrollTo(0, window.innerHeight - 60);
     const viewMode = event.target.innerHTML.toLowerCase()
     setViewMode(viewMode)
     dispatch({ type: "toggle-projects-view-mode", viewMode })

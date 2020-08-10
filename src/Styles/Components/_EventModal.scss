@@ -18,12 +18,13 @@
   max-width: 75rem;
   padding: 1.25rem;
   overflow-y: scroll;
-  display: grid;
-  grid-template-rows: 2.25rem 1fr;
-  grid-gap: 1.25rem;
+  // display: grid;
+  // grid-template-rows: 2.25rem 1fr;
+  // grid-gap: 1.25rem;
+  position: relative;
 
   > div {
-    padding-bottom: 4rem;
+    padding: 4rem 0;
   }
 
   .event-title, .event-image {
@@ -63,6 +64,9 @@
   border: none;
   padding: 0;
   cursor: pointer;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
 
   img {
     width: 100%;
@@ -90,7 +94,11 @@
     min-height: 43.75rem;
     height: 75vh;
     padding: 2rem;
-    // overflow: hidden;
+  }
+
+  #modal-close {
+    right: 2rem;
+    top: 2rem;
   }
 }
 
@@ -98,7 +106,7 @@
 
   #modal-content {
     min-height: 0;
-    max-height: 75vh;
+    max-height: 80vh;
     height: auto;
   }
 
