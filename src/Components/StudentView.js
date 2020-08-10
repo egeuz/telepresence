@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { GlobalState } from '../App'
 
 /* ASSETS */
@@ -11,6 +11,11 @@ import VideoBackground from './VideoBackground'
 function StudentView() {
 
   const { state } = useContext(GlobalState);
+
+  useEffect(() => {
+    window.scrollTo(0, window.innerHeight - 60);  
+  }, [])
+  
 
   return (
 

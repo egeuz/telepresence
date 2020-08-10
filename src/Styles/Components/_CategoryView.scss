@@ -3,12 +3,15 @@
 }
 
 @media (min-width: $breakpoint-desktop) {
+
+  header:not(.hidden) + #projects #category-details {
+    top: 120px;
+  }
+
   #category-view {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
-    overflow: scroll;
-    height: calc(100vh - 120px);
   }
 
   #category-details {
@@ -18,8 +21,10 @@
     padding: 4.375rem;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 60px;
+    height: 0;
     max-width: 720px;
+    transition: top 0.25s;
 
     h1 {
       font-size: 4.8vw;
