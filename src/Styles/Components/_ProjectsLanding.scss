@@ -49,6 +49,7 @@
     #tagline {
       @include caption-med($secondary);
       grid-area: tagline;
+      font-size: 15px;
 
       span {
         color: $light;

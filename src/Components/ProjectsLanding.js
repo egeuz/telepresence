@@ -55,8 +55,8 @@ function ProjectsLanding({ leftHand, rightHand, logotype }) {
       <div id="content">
         <div id="tagline">
           <p><span>a cyber expo</span> hosted by</p>
-          <p>first year parsons design &</p>
-          <p>technology mfa students</p>
+          <p>parsons design & technology</p>
+          <p>mfa rising thesis students</p>
         </div>
         <img
           id="logotype"

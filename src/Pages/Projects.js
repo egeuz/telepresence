@@ -46,7 +46,7 @@ function Projects() {
             logotype={content.logotype}
           />
 
-          <ProjectsShowcase categories={content.categories} />
+          <ProjectsShowcase categories={content.categories} bgVideo={content.student_view_video} bgImage={content.student_view_image} />
         </div>
       }
     </React.Fragment>

@@ -8,7 +8,7 @@ import backgroundImage from '../Assets/background.png'
 import StudentCard from './StudentCard'
 import VideoBackground from './VideoBackground'
 
-function StudentView() {
+function StudentView({bgVideo, bgImage}) {
 
   const { state } = useContext(GlobalState);
 
@@ -21,8 +21,8 @@ function StudentView() {
 
     <div id="student-view">
       <VideoBackground 
-        videoURL={backgroundVideo} 
-        imageURL={backgroundImage} 
+        videoURL={bgVideo.url} 
+        imageURL={bgImage.url} 
         attachment="" 
         position="fullscreen"
       />

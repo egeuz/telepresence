@@ -6,7 +6,7 @@ import Subheader from './Subheader'
 import CategoryView from './CategoryView'
 import StudentView from './StudentView'
 
-function ProjectsShowcase({categories}) {
+function ProjectsShowcase({categories, bgVideo, bgImage}) {
 
   const {state} = useContext(GlobalState)
   const {scrollPosition} = useScroll()
@@ -17,7 +17,7 @@ function ProjectsShowcase({categories}) {
       {
         state.projectsViewMode === "category" ? 
         <CategoryView categories={categories} /> : 
-        <StudentView />
+        <StudentView bgVideo={bgVideo} bgImage={bgImage} />
       }
     </div>
   )
