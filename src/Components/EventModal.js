@@ -35,6 +35,8 @@ function EventModal({ event }) {
       dispatch({ type: "set-modal-event", event: "" })
   }
 
+  console.log(timestamp.getHours());
+
   return (
     <div id="event-modal" onClick={closeModal}>
       <div id="modal-content">
@@ -52,8 +54,13 @@ function EventModal({ event }) {
             <p className="event-speaker">{RichText.asText(event.speaker)}</p>
             <div className="event-date-time">
               <span>August {timestamp.getDate()}</span>
-              <span>{timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
+              <span>{timestamp.getHours() === 12 ? "12" : timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
               <span>{event.duration} minutes</span>
+              <br/>
+              {
+                event.hosted_on &&
+                <span className="event-medium">Hosted on {event.hosted_on}</span>
+              }
             </div>
             <RichText render={event.description} htmlSerializer={descriptionSerializer} />
             <a className="eventbrite-button" href={event.eventbrite_url.url} target="_blank" rel="noopener noreferrer">REGISTER HERE</a>

@@ -47,6 +47,11 @@
     }
   }
 
+  .event-medium {
+    @include ui-inline;
+    margin: 0;
+  }
+
   .eventbrite-button {
     @include large-button;
     // display: inline-block;

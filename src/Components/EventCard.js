@@ -23,7 +23,7 @@ function EventCard({ event }) {
       <div className="event-cta">
         <div className="event-date-time">
           <span>August {timestamp.getDate()}</span>
-          <span>{timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
+          <span>{timestamp.getHours() === 12 ? "12" : timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
           <br/>
           <button onClick={openEvent} className="more-info">more info</button>
         </div>
