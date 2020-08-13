@@ -35,8 +35,6 @@ function EventModal({ event }) {
       dispatch({ type: "set-modal-event", event: "" })
   }
 
-  console.log(timestamp.getHours());
-
   return (
     <div id="event-modal" onClick={closeModal}>
       <div id="modal-content">

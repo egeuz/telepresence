@@ -3,8 +3,6 @@ import EventCard from './EventCard'
 
 function EventsDateSection({ date, events }) {
 
-  // console.log(events);
-
   return (
     <div className="events-date-section">
       <div className="poster">{date}</div>
