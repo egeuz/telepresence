@@ -9,6 +9,7 @@ function EventsShowcase() {
 
   const { state } = useContext(GlobalState);
 
+  if (state.events) console.log(new Date(state.events[0].data.timestamp.slice(0, 19)));
   return (
     <div id="events-showcase">
       <Subheader page="events" />
@@ -19,21 +20,21 @@ function EventsShowcase() {
             (state.dateFilter === "august-27" || state.dateFilter === "all") &&
             <EventsDateSection
               date="THURSDAY, AUGUST 27"
-              events={state.events.filter(event => new Date(event.data.timestamp).getDate() === 27)}
+              events={state.events.filter(event => new Date(event.data.timestamp.slice(0, 19)).getDate() === 27)}
             />
           }
           {
             (state.dateFilter === "august-28" || state.dateFilter === "all") &&
             <EventsDateSection
               date="FRIDAY, AUGUST 28"
-              events={state.events.filter(event => new Date(event.data.timestamp).getDate() === 28)}
+              events={state.events.filter(event => new Date(event.data.timestamp.slice(0, 19)).getDate() === 28)}
             />
           }
           {
             (state.dateFilter === "august-29" || state.dateFilter === "all") &&
             <EventsDateSection
               date="SATURDAY, AUGUST 29"
-              events={state.events.filter(event => new Date(event.data.timestamp).getDate() === 29)}
+              events={state.events.filter(event => new Date(event.data.timestamp.slice(0, 19)).getDate() === 29)}
             />
           }
         </div>
