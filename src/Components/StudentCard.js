@@ -8,8 +8,8 @@ function StudentCard({ mode = "standard", project }) {
   return (
     <Link
       to={location.pathname.includes("project/") ?
-        `../project/${project.id}` :
-        `project/${project.id}`
+        `../project/${project.nameID}` :
+        `project/${project.nameID}`
       }
       className={`student-card ${mode}`}
     >

@@ -17,7 +17,8 @@ function Project({ match }) {
 
     if (state.projects) {
       const projectData = state.projects.find(
-        project => project.data.id === match.params.projectID
+        project => (project.data.projectID === match.params.projectID) || 
+        (project.data.nameID === match.params.projectID)
       ).data
       dispatch({type: "set-current-project", project: projectData })
     }

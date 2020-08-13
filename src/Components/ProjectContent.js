@@ -8,6 +8,7 @@ function ProjectContent({ project }) {
         project.body1.map((section, index) => {
           switch (section.slice_type) {
             case 'text_box':
+              console.log(index)
               return (
                 <TextBox
                   key={`${section.slice_type}-${index}`}

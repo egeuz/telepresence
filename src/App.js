@@ -35,11 +35,18 @@ function App() {
     const setProjectList = (projects) => {
       projects.forEach(project => {
         //make a url slug by removing all spaces and punctuation from the title
-        const id = project.data.title[0].text.toLowerCase(0).replace(/[.,/#!$%^&?*;:{}=\-_`~()]/g, "").replace(/ /g, '_')
-        project.data.id = id;
+        const projectID = project.data.title[0].text.toLowerCase(0).replace(/[.,/#!$%^&?*;:{}=\-_`~()]/g, "").replace(/ /g, '_')
+        project.data.projectID = projectID;
+        //make an additonal name-based ID by removing all spaces and punctuation from the names, used as an alternative URL slug
+        const nameID = project.data.authors.map(author => 
+          (author.first_name[0].text + " " + author.last_name[0].text)
+            .replace(/ /g, "_")
+            .toLowerCase()
+          ).reduce((acc, val) => acc + "_" + val);
+          project.data.nameID = nameID;
       })
 
-      //sort projects alphabetically manually because for some reason the CMS API's sort doesn't work
+      //sort projects alphabetically
       projects = projects.sort((a, b) =>
         b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1)
 
