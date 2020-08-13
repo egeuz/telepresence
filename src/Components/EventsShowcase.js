@@ -9,7 +9,6 @@ function EventsShowcase() {
 
   const { state } = useContext(GlobalState);
 
-  if (state.events) console.log(new Date(state.events[0].data.timestamp.slice(0, 19)));
   return (
     <div id="events-showcase">
       <Subheader page="events" />
