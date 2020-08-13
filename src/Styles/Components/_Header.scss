@@ -43,6 +43,26 @@ header {
     a.active {
       color: $secondary;
     }
+
+    a.disabled {
+      color: #999;
+      position: relative;
+      filter: none;
+
+      &:hover {
+        color: #999;
+      }
+
+      &:hover::after {
+        @include caption-med($light);
+        color: $light;
+        width: 200%;
+        content: "Coming August 27!";
+        position: absolute;
+        left: -40%;
+        top: 3.5rem;
+      }
+    }
   }
 
   button {
@@ -56,6 +76,20 @@ header {
       filter: $black-filter $secondary-filter;
       //no need for transition because this is the mobile menu button
     }
+  }
+}
+
+header#simple {
+  background: none;
+  border-bottom: none;
+  padding-right: 2rem;
+
+  #logo {
+    visibility: hidden;
+  }
+
+  nav a {
+    margin-left: 3rem;
   }
 }
 

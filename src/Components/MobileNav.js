@@ -12,8 +12,8 @@ function MobileNav() {
   return (
     <div id="mobile-nav" className={(state.menuOpen) ? "open" : ""}>
       <button id="mobile-nav-close" onClick={closeMobileNav}></button>
-        <Link to="/gallery" onClick={closeMobileNav}>Showroom</Link>
-        <Link to="/events" onClick={closeMobileNav}>Live Events</Link>
+        {/* <Link to="/gallery" onClick={closeMobileNav}>Projects</Link> */}
+        <Link to="/events" onClick={closeMobileNav}>Events</Link>
         <Link to="/about" onClick={closeMobileNav}>About</Link>
     </div>
   )

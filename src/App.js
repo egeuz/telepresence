@@ -65,10 +65,12 @@ function App() {
     <React.Fragment>
       <GlobalState.Provider value={{ state, dispatch }}>
         <Router>
-          {state.headerOpen && <MobileNav />}
-          {state.headerOpen && <Header />}
+          {/* state.headerOpen && <MobileNav /> */}
+          {/* state.headerOpen && <Header /> */}
+          <MobileNav />
+          <Header mode={!state.headerOpen && "simple"} />
           <Switch>
-            <Route path="/" exact component={ComingSoon} />
+            <Route path="/" exact component={Events} />
             <Route path="/projects" exact component={Projects} />
             <Route path="/project/:projectID" exact component={Project} />
             <Route path="/events" exact component={Events} />
