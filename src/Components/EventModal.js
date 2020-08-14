@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import moment from 'moment'
 
 // import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { RichText } from 'prismic-reactjs'
@@ -9,7 +10,8 @@ import closeX from '../Assets/Icons/closex.svg'
 
 function EventModal({ event }) {
   const { dispatch } = useContext(GlobalState)
-  const timestamp = new Date(event.timestamp.slice(0, 19));
+  // const timestamp = new Date(event.timestamp.slice(0, 19));
+  const timestamp = moment(event.timestamp)
 
   useEffect(() => {
     // disableBodyScroll(document.getElementById("event-modal"));
@@ -51,10 +53,10 @@ function EventModal({ event }) {
             <h3 className="event-title">{RichText.asText(event.title)}</h3>
             <p className="event-speaker">{RichText.asText(event.speaker)}</p>
             <div className="event-date-time">
-              <span>August {timestamp.getDate()}</span>
-              <span>{timestamp.getHours() === 12 ? "12" : timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
+              <span>{timestamp.format("MMM DD")}</span>
+              <span>{timestamp.format("h")} {timestamp.format("A")}</span>
               <span>{event.duration} minutes</span>
-              <br/>
+              <br />
               {
                 event.hosted_on &&
                 <span className="event-medium">Hosted on {event.hosted_on}</span>

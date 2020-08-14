@@ -1,5 +1,6 @@
 import React from 'react'
 import EventCard from './EventCard'
+import moment from 'moment'
 
 function EventsDateSection({ date, events }) {
 
@@ -9,7 +10,7 @@ function EventsDateSection({ date, events }) {
       <div className="event-card-grid">
       {
         events
-        .sort((a, b) => new Date(a.data.timestamp) - new Date(b.data.timestamp))
+        .sort((a, b) => moment(a.data.timestamp) - moment(b.data.timestamp))
         .map(event => <EventCard key={event.id} event={event.data} />)
       }
       </div>

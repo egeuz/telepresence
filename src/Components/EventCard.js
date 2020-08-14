@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { GlobalState } from '../App'
 import { RichText } from 'prismic-reactjs'
+import moment from 'moment'
 
 function EventCard({ event }) {
 
   const {dispatch} = useContext(GlobalState)
-  const timestamp = new Date(event.timestamp.slice(0, 19));
+  // const timestamp = new Date(event.timestamp.slice(0, 19));
+  const timestamp = moment(event.timestamp)
 
   const openEvent = (e) => {
     dispatch({
@@ -22,8 +24,8 @@ function EventCard({ event }) {
       <p className="event-speaker">{RichText.asText(event.speaker)}</p>
       <div className="event-cta">
         <div className="event-date-time">
-          <span>August {timestamp.getDate()}</span>
-          <span>{timestamp.getHours() === 12 ? "12" : timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
+          <span>{timestamp.format("MMM DD")}</span>
+          <span>{timestamp.format("h")} {timestamp.format("A")}</span>
           <br/>
           <button onClick={openEvent} className="more-info">more info</button>
         </div>
