@@ -17,7 +17,7 @@ function Subheader({ page }) {
       {
         page === "projects" ? 
         <ProjectViewToggle dispatch={dispatch} scrollPosition={scrollPosition} /> : 
-        <DateFilter dispatch={dispatch} />
+        <DateFilter dispatch={dispatch} scrollPosition={scrollPosition} />
       }
     </div>
   )
@@ -63,11 +63,12 @@ function ProjectViewToggle({ dispatch, scrollPosition }) {
 
 }
 
-function DateFilter({ dispatch }) {
+function DateFilter({ dispatch, scrollPosition }) {
   const [dateFilter, setDateFilter] = useState("all")
 
   const handleDateFilter = (event) => {
     // const filter = event.target.innerHTML.toLowerCase().replace(/ /g, "-");
+    if (scrollPosition > window.innerHeight) window.scrollTo(0, window.innerHeight - 60);
     const filter = event.target.id;
     setDateFilter(filter);
     dispatch({ type: "set-date-filter", filter })
