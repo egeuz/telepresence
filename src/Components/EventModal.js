@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+// import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { RichText } from 'prismic-reactjs'
 /* LOCAL MODULES */
 import { GlobalState } from '../App'
@@ -12,8 +12,8 @@ function EventModal({ event }) {
   const timestamp = new Date(event.timestamp.slice(0, 19));
 
   useEffect(() => {
-    disableBodyScroll(document.getElementById("event-modal"));
-    return () => enableBodyScroll(document.getElementById("event-modal")  );
+    // disableBodyScroll(document.getElementById("event-modal"));
+    // return () => enableBodyScroll(document.getElementById("event-modal")  );
   }, [])
 
   const descriptionSerializer = (type, element, content, children, key) => {
