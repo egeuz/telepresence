@@ -30,7 +30,7 @@ function Projects() {
         content && state.projects &&
         <div id="projects">
           <VideoBackground
-            videoURL={scrollPosition < windowHeight / 3 ? content.hero_video.url : state.currentCategory ? state.currentCategory.category_video.url : content.hero_video.url}
+            videoURL={windowWidth < 500 ? "" : scrollPosition < windowHeight / 3 ? content.hero_video.url : state.currentCategory ? state.currentCategory.category_video.url : content.hero_video.url}
             imageURL={content.hero_image.url}
             position={
               windowWidth >= 750 && scrollPosition > windowHeight / 3 ? "left" :
