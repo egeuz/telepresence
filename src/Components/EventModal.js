@@ -12,8 +12,8 @@ function EventModal({ event }) {
   const timestamp = new Date(event.timestamp.slice(0, 19));
 
   useEffect(() => {
-    disableBodyScroll(document.body);
-    return () => enableBodyScroll(document.body);
+    disableBodyScroll(document.getElementById("event-modal"));
+    return () => enableBodyScroll(document.getElementById("event-modal")  );
   }, [])
 
   const descriptionSerializer = (type, element, content, children, key) => {
