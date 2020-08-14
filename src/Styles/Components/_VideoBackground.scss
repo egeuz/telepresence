@@ -15,6 +15,7 @@
 
 .video-container {
   height: 100%;
+  overflow: hidden;
 
   video,
   img {
@@ -22,6 +23,7 @@
     $position: calc(100vw - 705px);
     transform: translateX($position);
     transition: transform 1.5s ease-in-out;
+    overflow: hidden;
     // z-index: 0;
   }
 
