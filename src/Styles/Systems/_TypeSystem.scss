@@ -12,6 +12,7 @@
 @mixin poster-mobile($color: $tertiary) {
   @include poster($color);
   font-size: 3.125rem;
+  -webkit-text-stroke: 1px $color;
 }
 
 @mixin logo($color: $secondary) {

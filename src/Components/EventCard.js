@@ -22,7 +22,7 @@ function EventCard({ event }) {
       <p className="event-speaker">{RichText.asText(event.speaker)}</p>
       <div className="event-cta">
         <div className="event-date-time">
-          <span>Aug {timestamp.getDate()}</span>
+          <span>August {timestamp.getDate()}</span>
           <span>{timestamp.getHours() === 12 ? "12" : timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
           <br/>
           <button onClick={openEvent} className="more-info">more info</button>

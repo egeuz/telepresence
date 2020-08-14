@@ -1,19 +1,21 @@
 import React, { useContext } from 'react'
 import { GlobalState } from '../App'
+import useWindowSize from '../Hooks/useWindowSize'
 
 /* COMPONENTS */
 import StudentCard from './StudentCard'
 import VideoBackground from './VideoBackground'
 
 function StudentView({bgVideo, bgImage}) {
-
+ 
   const { state } = useContext(GlobalState);
+  const { windowWidth } = useWindowSize();
 
   return (
 
     <div id="student-view">
       <VideoBackground 
-        videoURL={bgVideo.url} 
+        videoURL={windowWidth < 500 ? "" : bgVideo.url} 
         imageURL={bgImage.url} 
         attachment="" 
         position="fullscreen"
