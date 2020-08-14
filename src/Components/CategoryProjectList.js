@@ -13,12 +13,12 @@ function CategoryProjectList({ match, excludedProject = "", maxSize = "" }) {
           .filter((project, index) => {
             if (maxSize && index === maxSize - 1) return null;
             if (excludedProject) {
-              return project.data.category === match && project.data.id !== excludedProject.id
+              return project.data.category === match && project.data.nameID !== excludedProject.nameID
             } else {
               return project.data.category === match
             }
           })
-          .map((project, index) => 
+          .map((project, index) =>
             <StudentCard
               key={`project-card-${index}`}
               mode="category-list"

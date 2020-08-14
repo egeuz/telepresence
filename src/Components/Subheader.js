@@ -6,10 +6,13 @@ function Subheader({ page }) {
   const { scrollPosition, scrollDirection } = useScroll()
   const { dispatch } = useContext(GlobalState)
 
+  // ${page === "events" ? "" : ""}
   return (
     <div
       id="subheader"
-      className={`${scrollPosition > window.innerHeight ? "fixed" : ""} ${scrollDirection === "up" ? "offset" : ""}`}
+      className={
+        `${scrollPosition > window.innerHeight ? "fixed" : ""} ${scrollDirection === "up" ? "offset" : ""}`
+      }
     >
       {
         page === "projects" ? 
@@ -88,19 +91,19 @@ function DateFilter({ dispatch }) {
         className={dateFilter === "august-27" ? "selected" : ""}
         onClick={handleDateFilter}
       >
-        AUGUST 27
+        AUG 27
       </button>
       <button
         className={dateFilter === "august-28" ? "selected" : ""}
         onClick={handleDateFilter}
       >
-        AUGUST 28
+        AUG 28
       </button>
       <button
         className={dateFilter === "august-29" ? "selected" : ""}
         onClick={handleDateFilter}
       >
-        AUGUST 29
+        AUG 29
       </button>
     </div>
   )

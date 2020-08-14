@@ -10,6 +10,8 @@
 
   p {
     @include p;
+    max-width: 655px;
+    word-wrap: break-word;
   }
 }
 

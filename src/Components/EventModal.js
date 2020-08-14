@@ -9,7 +9,7 @@ import closeX from '../Assets/Icons/closex.svg'
 
 function EventModal({ event }) {
   const { dispatch } = useContext(GlobalState)
-  const timestamp = new Date(event.timestamp);
+  const timestamp = new Date(event.timestamp.slice(0, 19));
 
   useEffect(() => {
     disableBodyScroll(document.body);

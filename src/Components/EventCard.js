@@ -5,7 +5,7 @@ import { RichText } from 'prismic-reactjs'
 function EventCard({ event }) {
 
   const {dispatch} = useContext(GlobalState)
-  const timestamp = new Date(event.timestamp);
+  const timestamp = new Date(event.timestamp.slice(0, 19));
 
   const openEvent = (e) => {
     dispatch({
@@ -22,7 +22,7 @@ function EventCard({ event }) {
       <p className="event-speaker">{RichText.asText(event.speaker)}</p>
       <div className="event-cta">
         <div className="event-date-time">
-          <span>August {timestamp.getDate()}</span>
+          <span>Aug {timestamp.getDate()}</span>
           <span>{timestamp.getHours() === 12 ? "12" : timestamp.getHours() % 12} {timestamp.getHours() / 12 >= 1 ? "PM" : "AM"}</span>
           <br/>
           <button onClick={openEvent} className="more-info">more info</button>

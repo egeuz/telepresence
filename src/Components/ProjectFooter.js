@@ -10,17 +10,17 @@ function ProjectFooter({ project }) {
   const {state} = useContext(GlobalState);
 
   const prevProjectID = () => {
-    const currentProjectIndex = state.projects.findIndex(p => p.data.id === project.id);
+    const currentProjectIndex = state.projects.findIndex(p => p.data.nameID === project.nameID);
     const prevProjectIndex = currentProjectIndex - 1 >= 0 ? currentProjectIndex - 1 : state.projects.length - 1;
     const prevProject = state.projects[prevProjectIndex];
-    return prevProject.data.id;
+    return prevProject.data.nameID;
   }
 
   const nextProjectID = () => {
-    const currentProjectIndex = state.projects.findIndex(p => p.data.id === project.id);
+    const currentProjectIndex = state.projects.findIndex(p => p.data.nameID === project.nameID);
     const nextProjectIndex = currentProjectIndex + 1 < state.projects.length ? currentProjectIndex + 1 : 0;
     const nextProject = state.projects[nextProjectIndex];
-    return nextProject.data.id;
+    return nextProject.data.nameID;
   }
 
   return (

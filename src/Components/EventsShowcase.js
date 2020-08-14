@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalState } from '../App'
+import useScroll from '../Hooks/useScroll'
 
 /* COMPONENTS */
 import Subheader from './Subheader'
@@ -8,9 +9,10 @@ import EventsDateSection from './EventsDateSection'
 function EventsShowcase() {
 
   const { state } = useContext(GlobalState);
+  const {scrollPosition} = useScroll()
 
   return (
-    <div id="events-showcase">
+    <div id="events-showcase" className={scrollPosition > window.innerHeight ? "offset" : "" }>
       <Subheader page="events" />
       {
         state.events &&

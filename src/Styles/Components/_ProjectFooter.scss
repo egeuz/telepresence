@@ -6,13 +6,13 @@
 }
 
 #nav-buttons {
-  display: flex;
   width: 100%;
+  max-width: 380px;
 
   a {
     @include dark-button;
     text-align: center;
-    margin-right: 1.25rem;
+    margin-bottom: 1.25rem;
     padding-top: 0.75rem;
   }
 }
@@ -25,12 +25,25 @@
   }  
 }
 
+@media (min-width: $breakpoint-mobile) {
+  #nav-buttons {
+    display: flex;
+    
+
+    a {
+      margin-right: 1.25rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
 @media (min-width: $breakpoint-tablet) {
   #nav-buttons {
     max-width: 380px;
     justify-content: space-between;
+    // margin: 0;
 
-    button {
+    a {
       margin: 0;
     }
   }

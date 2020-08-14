@@ -2,22 +2,23 @@
   background: $light;
   width: 100%;
   min-height: 100vh;
+
+  &.offset #events-content {
+    padding-top: calc(6rem + 140px);
+  }
 }
 
 #events-content {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem;
-  transition: padding 0.5s;
+  padding: 6rem 1.25rem;
 }
 
-#subheader.fixed + #events-content {
-  padding-top: calc(2.5rem + 120px);
-}
 
 .events-date-section {
   width: 100%;
   display: grid;
+  margin-bottom: 4rem;
 
   .poster {
     max-width: 300px;
@@ -25,6 +26,12 @@
     text-align: right;
     justify-self: right;
     margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 480px) {
+  #events-showcase.offset #events-content {
+    padding-top: calc(6rem + 60px);
   }
 }
 

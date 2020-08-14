@@ -7,6 +7,7 @@
   background: $dark;
   overflow-x: hidden;
   z-index: -2;
+  pointer-events: none;
 
   &.fullscreen {
     z-index: -1;
@@ -16,6 +17,7 @@
 .video-container {
   height: 100%;
   overflow: hidden;
+  pointer-events: none;
 
   video,
   img {
@@ -24,6 +26,7 @@
     transform: translateX($position);
     transition: transform 1.5s ease-in-out;
     overflow: hidden;
+    pointer-events: none;
     // z-index: 0;
   }
 
