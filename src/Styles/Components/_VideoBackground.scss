@@ -98,3 +98,9 @@
     }
   }
 }
+
+#student-view .video-background.fullscreen {
+  height: 100vh;
+  position: sticky;
+  // top: -100vh;
+}

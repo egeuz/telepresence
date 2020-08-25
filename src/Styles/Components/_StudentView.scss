@@ -21,10 +21,14 @@
 @media (min-width: $breakpoint-tablet) {
 
   #student-view {
+
+  }
+
+  .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     grid-template-rows: repeat(auto-fill, 360px);
-    flex-wrap: wrap;
+    margin-top: -100vh;
   }
 
   .letter-card {

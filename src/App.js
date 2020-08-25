@@ -48,7 +48,7 @@ function App() {
 
       //sort projects alphabetically
       projects = projects.sort((a, b) =>
-        b.data.authors[0].last_name[0].text < a.data.authors[0].last_name[0].text ? 1 : -1)
+        b.data.authors[0].last_name[0].text.toLowerCase() < a.data.authors[0].last_name[0].text.toLowerCase() ? 1 : -1)
 
       dispatch({ type: "set-project-list", projects })
     }
