@@ -20,6 +20,14 @@
     @include p;
     margin: 1.25rem 0 2.5rem;
   }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      @include hover-blur;
+    }
+  }
 }
 
 .image {

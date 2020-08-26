@@ -1,4 +1,5 @@
 import React from 'react'
+import { RichText } from 'prismic-reactjs'
 
 function ProjectContent({ project }) {
 
@@ -60,15 +61,22 @@ function ProjectContent({ project }) {
 
 /*** CONTENT SECTIONS ***/
 function TextBox({ content }) {
+
+  const textBoxSerializer = (type, element, content, children, key) => {
+    if (element.type === "heading3") {
+      return <h4 key={key}>{children}</h4>
+    } else if (element.type === "paragraph") {
+      return <p id="contributors" key={key}>{children}</p>
+    } else if (element.type === "hyperlink") {
+      return <a key={key} href={element.data.url} target="_blank" rel="noopener noreferrer">{children}</a>
+    } else {
+      return null;
+    }
+  }
+
   return (
     <div className="text-box">
-      {
-        content.map((item, index) => {
-          if (item.type === "heading3") return <h4 key={item.text}>{item.text}</h4>
-          if (item.type === "paragraph") return <p key={item.text}>{item.text}</p>
-          return null;
-        })
-      }
+        <RichText render={content} htmlSerializer={textBoxSerializer} />
     </div>
   )
 }
