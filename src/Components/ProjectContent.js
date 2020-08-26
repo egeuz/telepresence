@@ -66,7 +66,7 @@ function TextBox({ content }) {
     if (element.type === "heading3") {
       return <h4 key={key}>{children}</h4>
     } else if (element.type === "paragraph") {
-      return <p id="contributors" key={key}>{children}</p>
+      return <p key={key}>{children}</p>
     } else if (element.type === "hyperlink") {
       return <a key={key} href={element.data.url} target="_blank" rel="noopener noreferrer">{children}</a>
     } else {

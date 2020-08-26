@@ -75,10 +75,19 @@
   .mobile-category-details {
     display: block;
     color: $light;
+
+    p {
+      max-width: 400px;
+    }
   }
 
   .mobile-category-expand {
     background-image: url(../../Assets/Icons/arrow-up.svg);
+  }
+
+  .desktop-category-details p {
+    background: red;
+    max-width: 400px;
   }
 }
 
@@ -106,6 +115,7 @@
 
       p {
         @include caption-med($light);
+        max-width: 400px;
       }
     }
   }
