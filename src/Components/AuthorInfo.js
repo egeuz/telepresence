@@ -32,6 +32,7 @@ function AuthorInfo({ project, inGrid = false }) {
                 {link.source && link.source.toUpperCase()}
               </a>
             )
+            return null;
           }
           )
         }
