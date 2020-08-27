@@ -21,15 +21,18 @@ function AuthorInfo({ project, inGrid = false }) {
       <div id="social-media-links">
         {
           project.author_links &&
-          project.author_links.map((link, index) =>
-            <a 
-              key={`${link.source}-${index}`} 
-              href={`${link.source === "Email" ? "mailto:" : ""}${link.url.url}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            {link.source && link.source.toUpperCase()}
-            </a>
+          project.author_links.map((link, index) => {
+            if (link.source) return (
+              <a
+                key={`${link.source}-${index}`}
+                href={`${link.source === "Email" ? "mailto:" : ""}${link.url.url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.source && link.source.toUpperCase()}
+              </a>
+            )
+          }
           )
         }
       </div>
