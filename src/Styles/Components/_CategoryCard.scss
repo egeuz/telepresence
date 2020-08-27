@@ -38,8 +38,13 @@
 
     p {
       @include caption-med($light);
-      margin: 1rem 0 3rem;
+      margin: 0.5rem 0 2rem;
     }
+
+    > p {
+      margin-bottom: 3rem;
+    }
+
   }
 
   .mobile-category-expand {
@@ -77,16 +82,17 @@
     color: $light;
 
     p {
-      max-width: 400px;
+      max-width: 500px;
     }
   }
 
   .mobile-category-expand {
     background-image: url(../../Assets/Icons/arrow-up.svg);
   }
+}
 
-  .desktop-category-details p {
-    background: red;
+@media (min-width: $breakpoint-tablet) {
+  .category-card.active .desktop-category-details p {
     max-width: 400px;
   }
 }

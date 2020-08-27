@@ -1,7 +1,7 @@
 #project-content {
   width: 100%;
   max-width: 70.625rem;
-  padding: 5rem 0;
+  padding-top: 2rem;
 
   & > div {
     margin: 2.5rem 0;
@@ -163,7 +163,7 @@
 @media (min-width: $breakpoint-desktop) {
   #project-content {
     margin: 0 auto;
-    padding: 7.5rem 0;
+    padding: 5rem 0;
   }
 
   .text-box {

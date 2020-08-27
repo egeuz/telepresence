@@ -14,6 +14,8 @@
 
   .left-hand,
   .right-hand {
+    width: 100%;
+    max-width: 475px;
     position: absolute;
     z-index: 1;
     

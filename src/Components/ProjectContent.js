@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import { RichText } from 'prismic-reactjs'
 
 function ProjectContent({ project }) {
@@ -124,12 +124,17 @@ function Video({ content }) {
 }
 
 function Unity({ content }) {
+  const unity = useRef(null)
   const aspectRatio = content.aspect_ratio === "16:9" ? "widescreen" : "standard"
+
+  useEffect(() => {
+    unity.current.focus()
+  }, [])
 
   return (
     <div className={`unity ${aspectRatio}`}>
       <p>This Unity project cannot be played on a mobile device. Please view this page on a computer.</p>
-      <iframe src={content.unity_embed.url} title="Embedded Unity Project" />
+      <iframe ref={unity} src={content.unity_embed.url} title="Embedded Unity Project" />
     </div>
   )
 }

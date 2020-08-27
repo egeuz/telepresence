@@ -70,7 +70,7 @@ function App() {
           <MobileNav />
           <Header mode={!state.headerOpen && "simple"} />
           <Switch>
-            <Route path="/" exact component={ComingSoon} />
+            <Route path="/" exact component={Projects} />
             <Route path="/projects" exact component={Projects} />
             <Route path="/project/:projectID" exact component={Project} />
             <Route path="/events" exact component={Events} />

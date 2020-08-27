@@ -2,6 +2,10 @@
   display: none;
 }
 
+#category-details::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: $breakpoint-desktop) {
 
   header:not(.hidden) + #projects #category-details {
@@ -22,7 +26,6 @@
     position: -webkit-sticky;
     position: sticky;
     top: 60px;
-    // background: blue;
     height: 90vh;
     overflow-y: scroll;
     max-width: 720px;
@@ -32,6 +35,13 @@
       font-size: 4.5vw;
       margin-bottom: 7.625rem;
     }
+  }
+
+  #category-details::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
   }
 
 
