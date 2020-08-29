@@ -29,7 +29,7 @@ function EventCard({ event }) {
           <br/>
           <button onClick={openEvent} className="more-info">more info</button>
         </div>
-        <a className="eventbrite-button" href={event.eventbrite_url.url} target="_blank" rel="noopener noreferrer">REGISTER</a>
+        <a className="eventbrite-button" href={event.eventbrite_url.url} target="_blank" rel="noopener noreferrer">WATCH HERE</a>
       </div>
       
     </div>

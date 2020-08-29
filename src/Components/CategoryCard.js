@@ -5,19 +5,14 @@ import CategoryProjectList from './CategoryProjectList'
 
 function CategoryCard({ category }) {
 
-  // console.log(window.scrollY);
-  // console.log(document.querySelector(".category-card").scrollTop)
-
   const cardRef = useRef(null);
   const { state, dispatch } = useContext(GlobalState)
   const thisCategory = category.category_name[0].text
 
   const expandCategory = () => {
-    
     dispatch({ type: "set-current-category", category })
-    // console.log(cardRef);
     // const rect = cardRef.current.getBoundingClientRect();
-    // window.scrollTo(0, rect.top + window.scrollY - 120);
+    // window.scrollTo(0, rect.top + window.scrollY + 120);
   }
 
   const clearCategory = () => {

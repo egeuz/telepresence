@@ -63,7 +63,7 @@ function EventModal({ event }) {
               }
             </div>
             <RichText render={event.description} htmlSerializer={descriptionSerializer} />
-            <a className="eventbrite-button" href={event.eventbrite_url.url} target="_blank" rel="noopener noreferrer">REGISTER HERE</a>
+            <a className="eventbrite-button" href={event.eventbrite_url.url} target="_blank" rel="noopener noreferrer">WATCH HERE</a>
           </div>
         </div>
       </div>
